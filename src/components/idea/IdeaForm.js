@@ -16,7 +16,7 @@ export default class IdeaForm extends Component {
     }
 
     /*
-        Local method for validation, creating animal object, and
+        Local method for validation, creating idea object, and
         invoking the function reference passed from parent component
      */
     constructNewIdea = evt => {
