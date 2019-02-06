@@ -36,20 +36,14 @@ export default class IdeaForm extends Component {
             <React.Fragment>
                 <form className="ideaForm">
                     <div className="form-group">
-                        <label htmlFor="taskName">What is your Task?</label>
-                        <input type="text" required
+                        <label htmlFor="taskName">What do you have in your mind?</label>
+                        <input type="textarea" required
                                className="form-control"
                                onChange={this.handleFieldChange}
                                id="idea"
                                placeholder="anything " />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="dueDate">When do you need to complete it?</label>
-                        <input type="date" required
-                               className="form-control"
-                               onChange={this.handleFieldChange}
-                               id="time" placeholder="Date" />
-                    </div>
+                   
                     <button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</button>
                 </form>
             </React.Fragment>

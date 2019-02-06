@@ -14,7 +14,7 @@ class NavBar extends Component {
                         <Link className="nav-link" to="/idea">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="messages">/ Messages</Link>
+                        <Link className="nav-link" to="/messages">/ Messages</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/friends">/ Friends</Link>

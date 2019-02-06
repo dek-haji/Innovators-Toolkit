@@ -1,0 +1,7 @@
+:local(.ideaForm) {-webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  max-height: 0;
+  padding: 0 !important;
+}
