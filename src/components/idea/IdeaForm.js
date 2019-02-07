@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Button, Input } from "reactstrap"
 
 export default class IdeaForm extends Component {
     // Set initial state
@@ -33,19 +34,21 @@ export default class IdeaForm extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <React.Fragment className= "forms">
                 <form className="ideaForm">
                     <div className="form-group">
                         <label htmlFor="taskName">What do you have in your mind?</label>
-                        <input type="textarea" required
+                        <Input type="textarea" required
                                className="form-control"
                                onChange={this.handleFieldChange}
                                id="idea"
                                placeholder="anything " />
                     </div>
                    
-                    <button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</button>
+                    <Button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</Button>
                 </form>
+
+                <div>Empty </div>
             </React.Fragment>
         )
     }

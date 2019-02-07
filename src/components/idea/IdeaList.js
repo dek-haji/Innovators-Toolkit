@@ -1,29 +1,32 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
+import { Card, CardColumns, CardText, CardBody, Button } from "reactstrap"
 
 
 
 export default class IdeaList extends Component {
     render(){
     return(
-        <card className="ideas">
+        <CardColumns>
+        <Card body outline color="secondary"className="ideas" >
         
         {
             this.props.idea.map(idea => 
-                <div key={idea.id} className="card">
-                <div className="card-body">
+                <Card key={idea.id} className="card">
+                <CardBody body outline color="primary"className="card-body">
             
-                 <div>{idea.idea} </div>
+                 <CardText>{idea.idea} </CardText>
                  
-                <button >
+                <Button color="secondary">
                   <a href= "#"
                   onClick={() => this.props.deleteIdea(idea.id)} 
                   className="card-link">Delete</a>
-                  </button>
-                </div>
-                </div>
+                  </Button>
+                </CardBody>
+                </Card>
             )
         }
-        </card>
+        </Card>
+        </CardColumns>
     )
 }}
