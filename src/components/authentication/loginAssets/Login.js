@@ -89,7 +89,4 @@ export default class Login extends Component {
             </section>
         )
     }
-
-
-    // onClick={() => this.props.history.push("/news")}
 }
