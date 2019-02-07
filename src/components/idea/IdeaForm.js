@@ -5,6 +5,7 @@ export default class IdeaForm extends Component {
     // Set initial state
     state = {
         idea: "",
+        userId: "",
        
         
     }
@@ -21,11 +22,13 @@ export default class IdeaForm extends Component {
         invoking the function reference passed from parent component
      */
     constructNewIdea = evt => {
+        let sessionUser = sessionStorage.getItem("userId");
         evt.preventDefault()
+
             const idea = {
                 idea: this.state.idea,
-                time: this.state.time,
-                userId: this.state.userId
+                
+                userId: Number(sessionUser)
             }
 
             this.props.addIdea(idea).then(() => this.props.history.push("/idea"))
@@ -36,8 +39,8 @@ export default class IdeaForm extends Component {
         return (
             <React.Fragment className= "forms">
                 <form className="ideaForm">
-                    <div className="form-group">
-                        <label htmlFor="taskName">What do you have in your mind?</label>
+                    <div className="test">
+                        <label htmlFor="IdeaName">What do you have in your mind?</label>
                         <Input type="textarea" required
                                className="form-control"
                                onChange={this.handleFieldChange}
@@ -48,7 +51,8 @@ export default class IdeaForm extends Component {
                     <Button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</Button>
                 </form>
 
-                <div>Empty </div>
+                <form>Empty </form>
+
             </React.Fragment>
         )
     }

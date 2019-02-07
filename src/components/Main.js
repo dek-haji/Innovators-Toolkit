@@ -19,6 +19,7 @@ class Main extends Component {
             <React.Fragment>
                 {this.showNav()}
               <ApplicationViews />
+              
             </React.Fragment>
         )
     }
