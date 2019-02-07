@@ -18,7 +18,6 @@ export default class IdeaEditForm extends Component {
         IdeaManager.get(this.props.match.params.id).then(idea => {
           this.setState({
             idea:idea.idea,
-            time: idea.time,
             userId: idea.userId
           })
         })
@@ -29,13 +28,19 @@ export default class IdeaEditForm extends Component {
     
           const existingIdea = {
             idea:this.state.idea ,
-            time: this.state.time,
             userId: this.state.userId
           }
-          this.props.updateIdea(this.props.match.params.id, existingIdea)
+          this.props.updatedIdea(this.props.match.params.id, existingIdea)
           .then(() => this.props.history.push("/idea"))
         }
     render(){
-        return
+        return(
+            <React.Fragment>
+
+
+
+
+            </React.Fragment>
+        )
     }
 }
