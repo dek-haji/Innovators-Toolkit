@@ -5,6 +5,8 @@ import IdeaList from "../components/idea/IdeaList"
 import IdeaForm from "./idea/IdeaForm"
 import Login from "./authentication/loginAssets/Login"
 import UsersManager from "./modules/UsersManager"
+import Registeration from "./authentication/loginAssets/Registration"
+import SignUpManager from "../components/modules/SignUpManager"
 
 
 
@@ -27,6 +29,7 @@ export default class ApplicationViews extends Component {
 
             })
             this.updateComponent()
+            
         
         }
         addIdea = (idea) => IdeaManager.post(idea)
@@ -37,7 +40,7 @@ export default class ApplicationViews extends Component {
 
             })
             );
-
+            addUser = (user) => SignUpManager.post(user)
 
         deleteIdea = id => {
             return fetch(`http://localhost:5002/idea/${id}`, {
@@ -65,6 +68,10 @@ export default class ApplicationViews extends Component {
           return <Login {...props}
           users={this.state.users}
           updateComponent={this.updateComponent} />
+        }} />
+         <Route path="/register" render={(props) => {
+          return <Registeration {...props}
+            addUser={this.addUser} />
         }} />
                     <Route
                         exact
