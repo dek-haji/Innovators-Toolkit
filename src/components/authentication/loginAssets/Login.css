@@ -8,11 +8,14 @@
     }
 
     .login input, .register input {
-        border: 1px solid #D5D5D5;
-        padding: 5px;
-        border-radius: 6px;
-        text-align: center;
-        width: 60%;
+        padding: 10px 45px;
+        background: #00bcd4;
+        margin: 3% 2% 0;
+        border: none;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 1px;
     }
 
     .login h2{

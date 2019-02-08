@@ -8,6 +8,8 @@ import UsersManager from "./modules/UsersManager"
 import Registeration from "./authentication/loginAssets/Registration"
 import SignUpManager from "../components/modules/SignUpManager"
 import IdeaEditForm from "./idea/IdeaEditForm"
+import Better, { BetterForm } from "./better/BetterForm"
+import BestForm from "./best/bestForm"
 
 
 
@@ -102,6 +104,18 @@ export default class ApplicationViews extends Component {
                         return <IdeaForm {...props} addIdea={this.addIdea} />
                     }}
                 />
+                 <Route
+                    exact
+                    path="/idea" render={props => {
+                        return <BetterForm {...props} addIdea={this.addIdea} />
+                    }}
+                />
+                 <Route
+                    exact
+                    path="/idea" render={props => {
+                        return <BestForm {...props} addIdea={this.addIdea} />
+                    }}
+                />
                 <Route path="/idea/:ideaId(\d+)/edit" render={props => {
                     if (this.isAuthenticated()) {
                         return <IdeaEditForm {...props}
@@ -118,14 +132,17 @@ export default class ApplicationViews extends Component {
                             <IdeaList
                                 deleteIdea={this.deleteIdea}
                                 idea={this.state.idea}
-
+                            
                             />
+                            
                         );
+
                     } else {
                         return <Redirect to="/login" />;
                     }
 
                 }} />
+                
             </React.Fragment>
         )
     }

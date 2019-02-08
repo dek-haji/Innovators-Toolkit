@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
-import { Card, CardColumns, CardText, CardBody, Button } from "reactstrap"
+import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
 
 
 
@@ -21,8 +21,10 @@ export default class IdeaList extends Component {
                   <a href= "#"
                   onClick={() => this.props.deleteIdea(idea.id)} 
                   className="card-link">Delete</a>
+                  
                   </Button>
                   <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
+                  <Input type="checkbox"></Input>
                 </CardBody>
                 </Card>
             )

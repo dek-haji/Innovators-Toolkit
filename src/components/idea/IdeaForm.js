@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Button, Input } from "reactstrap"
+import "./Idea.css"
 
 export default class IdeaForm extends Component {
     // Set initial state
@@ -51,7 +52,7 @@ export default class IdeaForm extends Component {
                     <Button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</Button>
                 </form>
 
-                <form>Empty </form>
+                
 
             </React.Fragment>
         )

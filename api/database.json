@@ -1,17 +1,24 @@
 {
   "idea": [
     {
-      "idea": "whatsssss uppppp.",
-      "id": 5
+      "idea": "vvv",
+      "userId": 1,
+      "id": 1
     },
     {
-      "idea": "dfd",
-      "id": 7,
-      "userId": 1
+      "idea": "jhgjkhgjkh",
+      "userId": 1,
+      "id": 2
     },
     {
-      "idea": "test1",
-      "id": 8
+      "idea": "fsdfsfsf",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "idea": "fsdfsfsf, fjlskdjlsdk",
+      "userId": 1,
+      "id": 4
     }
   ],
   "users": [
@@ -49,6 +56,11 @@
       "name": "dek.haji",
       "email": "deeeqhaji@gmail.com",
       "id": 7
+    },
+    {
+      "name": "deeq",
+      "email": "deeeqhaji@gmail.com",
+      "id": 8
     }
   ]
 }
