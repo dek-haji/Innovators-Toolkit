@@ -7,6 +7,7 @@ export default class IdeaForm extends Component {
     state = {
         idea: "",
         userId: "",
+        categoryId: 1,
        
         
     }
@@ -28,7 +29,7 @@ export default class IdeaForm extends Component {
 
             const idea = {
                 idea: this.state.idea,
-                
+                categoryId: this.state.categoryId,
                 userId: Number(sessionUser)
             }
 
@@ -51,6 +52,7 @@ export default class IdeaForm extends Component {
                    
                     <Button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</Button>
                 </form>
+                    
 
                 
 

@@ -1,22 +1,25 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
+import "./Better.css"
 
 
 
-export default class IdeaList extends Component {
+export default class BetterForm extends Component {
    
     
     render(){
-    return(
-        <CardColumns>
+    return( 
+      
+        <CardColumns className= "betterIdeas">
+          <h1>Better Idea</h1>
         <Card body outline color="secondary"className="ideas" >
         
         {
-            this.props.okIdea.map(idea => 
+            this.props.betterIdea.map(idea => 
                 <Card key={idea.id} className="card">
                 <CardBody body outline color="primary"className="card-body">
-            
+              
                  <CardText >{idea.idea} </CardText>
                  
                 <Button color="secondary">

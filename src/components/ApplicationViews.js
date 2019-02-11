@@ -8,25 +8,43 @@ import UsersManager from "./modules/UsersManager"
 import Registeration from "./authentication/loginAssets/Registration"
 import SignUpManager from "../components/modules/SignUpManager"
 import IdeaEditForm from "./idea/IdeaEditForm"
-import Better, { BetterForm } from "./better/BetterForm"
-import BestForm from "./best/bestForm"
+import Idea from "./idea/Idea"
+
+
 
 
 
 
 export default class ApplicationViews extends Component {
     state = {
-        idea: []
+        okIdea: [],
+        betterIdea: [],
+        bestIdea: []
+       
     };
     isAuthenticated = () => sessionStorage.getItem("username") !== null
     componentDidMount() {
 
-        IdeaManager.getAll()
-            .then(allIdea => {
-                this.setState({
-                    idea: allIdea
-                })
+        IdeaManager.getOkIdeas()
+        .then(okIdeas => {
+            this.setState({
+                okIdea: okIdeas
             })
+        })
+
+        IdeaManager.getBetterIdeas()
+        .then(better => {
+            this.setState({
+                betterIdea: better
+            })
+        })
+
+        IdeaManager.getBestIdeas()
+        .then(best => {
+            this.setState({
+                bestIdea: best
+            })
+        })
         const newState = {}
 
         fetch("http://localhost:5002/idea")
@@ -63,12 +81,16 @@ export default class ApplicationViews extends Component {
                 idea: idea
             }))
     }
+
+
+    
     editIdea = (id, idea) => {
         return IdeaManager.updateIdea(id, idea)
         .then(()=> IdeaManager.getAll())
             .then(idea => this.setState({
                 idea: idea,
-                id: id
+                
+               
                 
             }))
     }
@@ -101,21 +123,14 @@ export default class ApplicationViews extends Component {
                 <Route
                     exact
                     path="/idea" render={props => {
-                        return <IdeaForm {...props} addIdea={this.addIdea} />
+                        return <Idea {...props} 
+                                    okIdea={this.state.okIdea}
+                                    addIdea={this.addIdea}
+                                    betterIdea={this.state.betterIdea}
+                                    bestIdea={this.state.bestIdea} />
                     }}
                 />
-                 <Route
-                    exact
-                    path="/idea" render={props => {
-                        return <BetterForm {...props} addIdea={this.addIdea} />
-                    }}
-                />
-                 <Route
-                    exact
-                    path="/idea" render={props => {
-                        return <BestForm {...props} addIdea={this.addIdea} />
-                    }}
-                />
+                 
                 <Route path="/idea/:ideaId(\d+)/edit" render={props => {
                     if (this.isAuthenticated()) {
                         return <IdeaEditForm {...props}
@@ -126,7 +141,7 @@ export default class ApplicationViews extends Component {
                         return <Redirect to="/login" />
                     }
                 }} />
-                <Route exact path="/idea" render={(props) => {
+                {/* <Route exact path="/idea" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
                             <IdeaList
@@ -137,11 +152,19 @@ export default class ApplicationViews extends Component {
                             
                         );
 
-                    } else {
-                        return <Redirect to="/login" />;
                     }
 
-                }} />
+                }} /> */}
+                 {/* <Route path="/idea/:ideaId(\d+)/edit" render={props => {
+                    if (this.isAuthenticated()) {
+                        return <Forward {...props}
+                        editIdea={this.editIdea} 
+                        idea={this.state.idea}
+                            />
+                    } else {
+                        return <Redirect to="/login" />
+                    }
+                }} /> */}
                 
             </React.Fragment>
         )

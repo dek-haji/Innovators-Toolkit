@@ -12,8 +12,13 @@ class Main extends Component {
     showNav =() => {
         if (this.isAuthenticated()) {
             return <NavBar />
+        }else {
+            return null
         }
     }
+
+
+    
     render() {
         return (
             <React.Fragment>

@@ -3,11 +3,11 @@ import IdeaManager from "../modules/IdeaManager"
 import { Input, Button } from "reactstrap"
 
 
-export default class IdeaEditForm extends Component {
+export default class Forward extends Component {
   state = {
     idea: "",
-    userId: 12,
-    categoryId: ""
+
+    userId: ""
   }
 
   handleFieldChange = evt => {
@@ -21,23 +21,21 @@ export default class IdeaEditForm extends Component {
 
     const existingIdea = {
       idea: this.state.idea,
-      userId: 12,
-      categoryId: this.state.categoryId
+      userId: this.state.userId,
+      category:"Better"
     }
     console.log("match.params.id:", this.props.match.params.ideaId)
     console.log("existingIdea:", existingIdea);
     
-    this.props.editIdea(this.props.match.params.ideaId, existingIdea)
-    .then(() => this.props.history.push("/idea"))
+    this.props.editIdea(this.props.match.params.ideaId, existingIdea).then(() => this.props.history.push("/idea"))
   }
-  componentDidMount() {    
-    IdeaManager.get(this.props.match.params.ideaId)
-    .then(idea => {
+  componentDidMount() {
+    IdeaManager.get(this.props.match.params.ideaId).then(idea => {
       this.setState({
         idea: idea.idea,
         userId: idea.userId,
-        categoryId: idea.categoryId
-      })      
+        category: idea.category
+      })
     })
   }
   render() {

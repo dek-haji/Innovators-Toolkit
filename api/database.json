@@ -1,24 +1,72 @@
 {
   "idea": [
     {
-      "idea": "vvv",
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "idea": "jhgjkhgjkh",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "idea": "fsdfsfsf",
-      "userId": 1,
+      "idea": "test123",
+      "userId": 12,
+      "categoryId": 2,
       "id": 3
     },
     {
-      "idea": "fsdfsfsf, fjlskdjlsdk",
+      "idea": "better idea",
+      "categoryId": 2,
       "userId": 1,
       "id": 4
+    },
+    {
+      "idea": "okay test",
+      "userId": 12,
+      "categoryId": 1,
+      "id": 5
+    },
+    {
+      "idea": "ok idea",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "idea": "best test",
+      "userId": 12,
+      "categoryId": 3,
+      "id": 9
+    },
+    {
+      "idea": "best",
+      "categoryId": 3,
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "idea": "testest",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "idea": "hi there\n",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "idea": "hi there\n",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 13
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "ok"
+    },
+    {
+      "id": 2,
+      "name": "better"
+    },
+    {
+      "id": 3,
+      "name": "best"
     }
   ],
   "users": [

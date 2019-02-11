@@ -1,7 +1,7 @@
 const remoteURL = "http://localhost:5002";
 export default {
     get(id) {
-      return fetch(`${remoteURL}/idea/`).then(e => e.json());
+      return fetch(`${remoteURL}/idea/${id}`).then(e => e.json());
     },
     getAll() {
       return fetch(`${remoteURL}/idea`).then(e => e.json());
@@ -25,7 +25,19 @@ export default {
           body: JSON.stringify(idea)
         }).then(data => data.json());
         },
-      }
 
-          
-  
+        getOkIdeas() {
+          return fetch(`${remoteURL}/idea?categoryId=1`).then(e => e.json());
+        },
+        getBetterIdeas() {
+          return fetch(`${remoteURL}/idea?categoryId=2`).then(e => e.json());
+        },
+        getBestIdeas() {
+          return fetch(`${remoteURL}/idea?categoryId=3`).then(e => e.json());
+        }
+    
+      }
+      
+      
+
+    
