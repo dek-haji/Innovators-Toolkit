@@ -24,12 +24,12 @@ export default class BetterForm extends Component {
                  
                 <Button color="secondary">
                   <a href= "#"
-                  onClick={() => this.props.deleteIdea(idea.id)} 
+                  onClick={() => this.props.deleteBetterIdea(idea.id)} 
                   className="card-link">Delete</a>
                   
                   </Button>
                   </CardBody>
-                  <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
+                  {/* <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link> */}
                  
                   </Card>
             )

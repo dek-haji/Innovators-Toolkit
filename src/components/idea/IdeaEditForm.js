@@ -6,7 +6,7 @@ import { Input, Button } from "reactstrap"
 export default class IdeaEditForm extends Component {
   state = {
     idea: "",
-    userId: 12,
+    userId: "",
     categoryId: ""
   }
 

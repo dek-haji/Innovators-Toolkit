@@ -1,58 +1,28 @@
 {
   "idea": [
     {
-      "idea": "test123",
-      "userId": 12,
-      "categoryId": 2,
-      "id": 3
-    },
-    {
-      "idea": "better idea",
-      "categoryId": 2,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "idea": "okay test",
-      "userId": 12,
-      "categoryId": 1,
-      "id": 5
-    },
-    {
-      "idea": "ok idea",
-      "categoryId": 1,
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "idea": "best test",
-      "userId": 12,
-      "categoryId": 3,
-      "id": 9
-    },
-    {
-      "idea": "best",
+      "idea": "test3",
       "categoryId": 3,
       "userId": 1,
-      "id": 10
+      "id": 16
     },
     {
-      "idea": "testest",
-      "categoryId": 1,
+      "idea": "test2",
+      "categoryId": 2,
       "userId": 1,
-      "id": 11
+      "id": 16
     },
     {
-      "idea": "hi there\n",
-      "categoryId": 1,
+      "idea": "test3",
+      "categoryId": 3,
       "userId": 1,
-      "id": 12
+      "id": 16
     },
     {
-      "idea": "hi there\n",
+      "idea": "test1",
       "categoryId": 1,
       "userId": 1,
-      "id": 13
+      "id": 18
     }
   ],
   "categories": [
@@ -94,11 +64,6 @@
       "name": "Doly",
       "email": "dolly@email.com",
       "id": 5
-    },
-    {
-      "name": "",
-      "email": "",
-      "id": 6
     },
     {
       "name": "dek.haji",

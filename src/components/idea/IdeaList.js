@@ -10,6 +10,7 @@ export default class IdeaList extends Component {
     render(){
     return(
         <CardColumns>
+            
         <Card body outline color="secondary"className="ideas" >
         
         {
@@ -21,12 +22,13 @@ export default class IdeaList extends Component {
                  
                 <Button color="secondary">
                   <a href= "#"
-                  onClick={() => this.props.deleteIdea(idea.id)} 
+                  onClick={() => this.props.deleteOkIdea(idea.id)} 
                   className="card-link">Delete</a>
                   
                   </Button>
                   </CardBody>
                   <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
+                  <Button>Click here</Button>
                  
                   </Card>
             )

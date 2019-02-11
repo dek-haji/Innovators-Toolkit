@@ -1,8 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import IdeaManager from "../components/modules/IdeaManager"
-import IdeaList from "../components/idea/IdeaList"
-import IdeaForm from "./idea/IdeaForm"
 import Login from "./authentication/loginAssets/Login"
 import UsersManager from "./modules/UsersManager"
 import Registeration from "./authentication/loginAssets/Registration"
@@ -61,16 +59,16 @@ export default class ApplicationViews extends Component {
 
     }
     addIdea = (idea) => IdeaManager.post(idea)
-        .then(() => IdeaManager.getAll())
+        .then(() => IdeaManager.getOkIdeas())
         .then(AllIdea => this.setState({
 
-            idea: AllIdea
+            okIdea: AllIdea
 
         })
         );
     addUser = (user) => SignUpManager.post(user)
 
-    deleteIdea = id => {
+    deleteOkIdea = id => {
         return fetch(`http://localhost:5002/idea/${id}`, {
             method: "DELETE"
         })
@@ -78,7 +76,32 @@ export default class ApplicationViews extends Component {
             .then(() => fetch(`http://localhost:5002/idea`))
             .then(e => e.json())
             .then(idea => this.setState({
-                idea: idea
+                okIdea: idea,
+                
+            }))
+    }
+    deleteBetterIdea = id => {
+        return fetch(`http://localhost:5002/idea/${id}`, {
+            method: "DELETE"
+        })
+            .then(e => e.json())
+            .then(() => fetch(`http://localhost:5002/idea`))
+            .then(e => e.json())
+            .then(idea => this.setState({
+                betterIdea: idea,
+                
+            }))
+    }
+    deleteBestIdea = id => {
+        return fetch(`http://localhost:5002/idea/${id}`, {
+            method: "DELETE"
+        })
+            .then(e => e.json())
+            .then(() => fetch(`http://localhost:5002/idea`))
+            .then(e => e.json())
+            .then(idea => this.setState({
+                bestIdea: idea,
+                
             }))
     }
 
@@ -126,6 +149,9 @@ export default class ApplicationViews extends Component {
                         return <Idea {...props} 
                                     okIdea={this.state.okIdea}
                                     addIdea={this.addIdea}
+                                    deleteOkIdea={this.deleteOkIdea}
+                                    deleteBetterIdea={this.deleteBetterIdea}
+                                    deleteBestIdea={this.deletebestIdea}
                                     betterIdea={this.state.betterIdea}
                                     bestIdea={this.state.bestIdea} />
                     }}

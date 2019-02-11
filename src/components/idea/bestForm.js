@@ -24,7 +24,7 @@ export default class BestForm extends Component {
                  
                 <Button color="secondary">
                   <a href= "#"
-                  onClick={() => this.props.deleteIdea(idea.id)} 
+                  onClick={() => this.props.deleteBestIdea(idea.id)} 
                   className="card-link">Delete</a>
                   
                   </Button>
