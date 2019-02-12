@@ -12,9 +12,9 @@ export default class BestForm extends Component {
     return( 
       
         <CardColumns className= "BestIdea">
-          <h1>Best Idea</h1>
+         
         <Card body outline color="secondary"className="ideas" >
-        
+        <h1>Best Idea</h1>
         {
             this.props.bestIdea.map(idea => 
                 <Card key={idea.id} className="card">
@@ -29,7 +29,7 @@ export default class BestForm extends Component {
                   
                   </Button>
                   </CardBody>
-                  <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
+                  
                  
                   </Card>
             )

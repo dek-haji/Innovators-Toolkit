@@ -1,5 +1,5 @@
 .betterIdeas{
-    align-content: center;
-    
-overflow: scroll;
+    text-align: center;
+
+    position: relative;
 }

@@ -1,15 +1,15 @@
 import React, { Component } from "react"
 import "./Login.css"
 import { Link } from "react-router-dom"
-import picpic from "../loginAssets/picpic.png"
+import brain from "../loginAssets/brain.png"
 
 
 
 export default class Login extends Component {
     // Set initial state
     state = {
-        username: "",
-        password: ""
+        email: "",
+        username: ""
     }
 
     // Update state whenever an input field is edited
@@ -61,7 +61,7 @@ export default class Login extends Component {
         return (
             <section className="login">
                 <form className="registerContainer" onSubmit={this.handleLogin}>
-                <img src={picpic} className="acornIcon" alt="acornIcon" height="60" width="60"></img>
+                <img src={brain} className="acornIcon" alt="acornIcon" height="60" width="60"></img>
                     <h2>Please sign in</h2>
                     <label htmlFor="inputUsername">
                     </label> <br></br>

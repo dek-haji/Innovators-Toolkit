@@ -12,9 +12,9 @@ export default class BetterForm extends Component {
     return( 
       
         <CardColumns className= "betterIdeas">
-          <h1>Better Idea</h1>
+         
         <Card body outline color="secondary"className="ideas" >
-        
+        <h1>Better Idea</h1>
         {
             this.props.betterIdea.map(idea => 
                 <Card key={idea.id} className="card">

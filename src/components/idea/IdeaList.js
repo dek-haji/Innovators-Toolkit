@@ -1,24 +1,28 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
-import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
+import { Card, CardColumns, CardText, CardBody, Button, } from "reactstrap"
+import "./Idea.css"
 
 
 
 export default class IdeaList extends Component {
    
-    
+    handleClick() {
+        console.log('Click happened');
+    }
     render(){
     return(
         <CardColumns>
             
         <Card body outline color="secondary"className="ideas" >
-        
+        <h1>ok idea</h1>
         {
             this.props.okIdea.map(idea => 
                 <Card key={idea.id} className="card">
+                
                 <CardBody body outline color="primary"className="card-body">
             
-                 <CardText >{idea.idea} </CardText>
+                 <CardText>{idea.idea} </CardText>
                  
                 <Button color="secondary">
                   <a href= "#"
@@ -28,7 +32,7 @@ export default class IdeaList extends Component {
                   </Button>
                   </CardBody>
                   <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
-                  <Button>Click here</Button>
+                  <button onClick={this.handleClick}>Click Me</button>
                  
                   </Card>
             )

@@ -1,0 +1,15 @@
+.card-text{
+    border: 1px solid black;
+    background-color: white
+}
+.card{
+    background-color: lightgray
+}
+.ideas{
+    text-align: center;
+
+    position: relative;
+}
+.card-link{
+    color: #000;
+}

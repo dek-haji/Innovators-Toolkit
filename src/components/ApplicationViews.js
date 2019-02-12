@@ -151,7 +151,7 @@ export default class ApplicationViews extends Component {
                                     addIdea={this.addIdea}
                                     deleteOkIdea={this.deleteOkIdea}
                                     deleteBetterIdea={this.deleteBetterIdea}
-                                    deleteBestIdea={this.deletebestIdea}
+                                    deleteBestIdea={this.deleteBestIdea}
                                     betterIdea={this.state.betterIdea}
                                     bestIdea={this.state.bestIdea} />
                     }}
