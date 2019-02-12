@@ -1,46 +1,16 @@
 {
   "idea": [
     {
-      "idea": "test2",
-      "categoryId": 3,
-      "userId": 1,
-      "id": 16
-    },
-    {
-      "idea": "test2",
-      "categoryId": 2,
-      "userId": 1,
-      "id": 16
-    },
-    {
-      "idea": "test2",
-      "categoryId": 2,
-      "userId": 1,
-      "id": 16
-    },
-    {
-      "idea": "test3",
-      "categoryId": 3,
-      "userId": 1,
-      "id": 16
-    },
-    {
       "idea": "test1",
+      "userId": 12,
       "categoryId": 1,
-      "userId": 1,
-      "id": 17
+      "id": 3
     },
     {
-      "idea": "jhkhkhkjhlkjhkjhlkjhlkjhjkhkjhkljhkjhklhjklhjkljhklhkljklh",
+      "idea": "ergfdghfhhgh",
       "categoryId": 1,
-      "userId": 1,
-      "id": 18
-    },
-    {
-      "idea": "yoooooow",
-      "categoryId": 1,
-      "userId": 2,
-      "id": 19
+      "userId": null,
+      "id": 4
     }
   ],
   "categories": [
@@ -92,6 +62,81 @@
       "name": "deeq",
       "email": "deeeqhaji@gmail.com",
       "id": 8
+    },
+    {
+      "name": "test3",
+      "email": "test3@email.com",
+      "id": 9
+    },
+    {
+      "name": "onetwo@email.com",
+      "email": "one@email.com",
+      "id": 10
+    },
+    {
+      "name": "register",
+      "email": "register@email.com",
+      "id": 11
+    },
+    {
+      "name": "create1",
+      "email": "create1@email.com",
+      "id": 12
+    },
+    {
+      "name": "good",
+      "email": "good1@email.com",
+      "id": 13
+    },
+    {
+      "name": "hithere",
+      "email": "hithere@email.com",
+      "id": 14
+    },
+    {
+      "name": "1234",
+      "email": "1234@email.com",
+      "id": 16
+    },
+    {
+      "name": "signup",
+      "email": "signup@email.com",
+      "id": 20
+    },
+    {
+      "name": "1122",
+      "email": "1122@email.com",
+      "id": 23
+    },
+    {
+      "id": 24
+    },
+    {
+      "name": "112233",
+      "email": "112233",
+      "id": 25
+    },
+    {
+      "id": 26
+    },
+    {
+      "name": "leah",
+      "email": "leah@email.com",
+      "id": 27
+    },
+    {
+      "name": "leah1",
+      "email": "leah1@email.com",
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "id": 31
     }
   ]
 }

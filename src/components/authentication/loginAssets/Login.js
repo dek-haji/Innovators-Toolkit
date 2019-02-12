@@ -31,10 +31,11 @@ export default class Login extends Component {
 
         let currentUser = sessionStorage.getItem("username")
         let authenticated = this.props.users.find(user =>
-            user.name === currentUser)
+            user.name === this.state.username)
+            console.log(currentUser)
+            console.log(this.props)
 
-
-            console.log(authenticated.id)
+            console.log(authenticated)
 
             sessionStorage.setItem(
                 "userId",
@@ -42,7 +43,7 @@ export default class Login extends Component {
 
             if (authenticated === undefined){
                 alert("Whoops! We we couldn't find your account. Please re-renter a valid username and email or sign up below!")
-                window.location.reload()
+                
                 // this.props.history.push("/register")
             } else {
                 // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE

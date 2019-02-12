@@ -41,3 +41,6 @@ export default class IdeaList extends Component {
         </CardColumns>
     )
 }}
+// when the button is clicked it needs to change the category ID to 2.
+// we need to update the state of only category ID of 2.
+// we need to use PUT or patch for changing the ID.

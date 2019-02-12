@@ -17,7 +17,8 @@ export default class ApplicationViews extends Component {
     state = {
         okIdea: [],
         betterIdea: [],
-        bestIdea: []
+        bestIdea: [],
+        users:[]
        
     };
     isAuthenticated = () => sessionStorage.getItem("username") !== null
@@ -55,6 +56,7 @@ export default class ApplicationViews extends Component {
 
             })
         this.updateComponent()
+        this.addUser()
 
 
     }
@@ -85,7 +87,7 @@ export default class ApplicationViews extends Component {
             method: "DELETE"
         })
             .then(e => e.json())
-            .then(() => fetch(`http://localhost:5002/idea`))
+            .then(() => fetch(`http://localhost:5002/idea?categoryId=2`))
             .then(e => e.json())
             .then(idea => this.setState({
                 betterIdea: idea,
@@ -97,7 +99,7 @@ export default class ApplicationViews extends Component {
             method: "DELETE"
         })
             .then(e => e.json())
-            .then(() => fetch(`http://localhost:5002/idea`))
+            .then(() => fetch(`http://localhost:5002/idea?categoryId=3`))
             .then(e => e.json())
             .then(idea => this.setState({
                 bestIdea: idea,
@@ -111,7 +113,7 @@ export default class ApplicationViews extends Component {
         return IdeaManager.updateIdea(id, idea)
         .then(()=> IdeaManager.getAll())
             .then(idea => this.setState({
-                idea: idea,
+                okIdea: idea
                 
                
                 
