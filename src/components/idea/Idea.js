@@ -5,7 +5,9 @@ import BestForm from './bestForm';
 import BetterForm from './BetterForm';
 
 export class Idea extends Component {
+  
   render() {
+    
     return (
       <div>
         <IdeaForm addIdea={this.props.addIdea}
@@ -14,9 +16,10 @@ export class Idea extends Component {
 
         <IdeaList okIdea={this.props.okIdea}
           deleteOkIdea={this.props.deleteOkIdea} 
-          forwardComponent={this.props.forwardComponent} />
+          forwardComponent1={this.props.forwardComponent1} />
         <BetterForm betterIdea={this.props.betterIdea}
-          deleteBetterIdea={this.props.deleteBetterIdea} />
+          deleteBetterIdea={this.props.deleteBetterIdea}
+          forwardComponent2={this.props.forwardComponent2} />
         <BestForm bestIdea={this.props.bestIdea}
           deleteBestIdea={this.props.deleteBestIdea} />
 

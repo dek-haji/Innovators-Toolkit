@@ -19,6 +19,7 @@ export default class ApplicationViews extends Component {
         betterIdea: [],
         bestIdea: [],
         users:[]
+
        
     };
     isAuthenticated = () => sessionStorage.getItem("username") !== null
@@ -61,6 +62,12 @@ export default class ApplicationViews extends Component {
 
 
     }
+    componentDidUpdate(prevProps) {
+        // Typical usage (don't forget to compare props):
+        if (this.props.userId !== prevProps.userId) {
+          this.fetchData(this.props.userId);
+        }
+      }
     addIdea = (idea) => IdeaManager.post(idea)
         .then(() => IdeaManager.getOkIdeas())
         .then(AllIdea => this.setState({
@@ -121,17 +128,26 @@ export default class ApplicationViews extends Component {
             }))
     }
 
-    forwardComponent = (id, idea) => {
+    forwardComponent1 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
         .then(()=> IdeaManager.getBetterIdeas())
             .then(idea => this.setState({
-                forwardComponent: idea
+                betterIdea: idea
                 
                
                 
             }))
     }
-
+    forwardComponent2 = (id, idea) => {
+        return IdeaManager.changeComponent(id, idea)
+        .then(()=> IdeaManager.getBestIdeas())
+            .then(idea => this.setState({
+                bestIdea: idea
+                
+               
+                
+            }))
+    }
     updateComponent = () => {
 
         UsersManager.getAll().then(allUsers => {
@@ -169,7 +185,8 @@ export default class ApplicationViews extends Component {
                                     deleteBestIdea={this.deleteBestIdea}
                                     betterIdea={this.state.betterIdea}
                                     bestIdea={this.state.bestIdea} 
-                                    forwardComponent={this.forwardComponent}
+                                    forwardComponent1={this.forwardComponent1}
+                                    forwardComponent2={this.forwardComponent2}
                                     />
                     }}
                 />

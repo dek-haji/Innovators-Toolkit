@@ -29,21 +29,35 @@ export default class IdeaList extends Component {
         console.log("this.state.idea.id:", evt.target.id)
         console.log("existingIdea:", existingComponent);
         
-        this.props.forwardComponent(evt.target.id, existingComponent)
+        this.props.forwardComponent1(evt.target.id, existingComponent)
         // .then(() => this.props.history.push("/idea"))
       }
+      
       componentDidMount() {    
         IdeaManager.get(this.state.idea.id)
         .then(idea => {
           this.setState({
             idea: idea.idea,
             userId: idea.userId,
-            categoryId: 2
+            categoryId: idea.categoryId
           })      
         })
       }
+      componentDidUpdate(prevProps) {
+        
+        if (this.props.categoryId !== prevProps.categoryId) {
+          this.fetchData(this.props.categoryId);
+        }
+            
+
+        
     
-    render(){
+      }
+    
+    render()
+    
+    {
+        console.log(this.props)
     return(
         <CardColumns>
             

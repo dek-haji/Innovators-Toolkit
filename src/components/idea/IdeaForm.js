@@ -40,6 +40,7 @@ export default class IdeaForm extends Component {
     render() {
         return (
             <React.Fragment className= "forms">
+            
                 <form className="ideaForm">
                     <div className="test">
                         <label htmlFor="IdeaName">What do you have in your mind?</label>
@@ -47,7 +48,8 @@ export default class IdeaForm extends Component {
                                className="form-control"
                                onChange={this.handleFieldChange}
                                id="idea"
-                               placeholder="anything " />
+                               placeholder="anything"
+                               />
                     </div>
                    
                     <Button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</Button>
