@@ -18,6 +18,7 @@ export default class IdeaForm extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
+   
 
     /*
         Local method for validation, creating idea object, and
@@ -36,12 +37,16 @@ export default class IdeaForm extends Component {
             this.props.addIdea(idea).then(() => this.props.history.push("/idea"))
 
     }
+    handleSubmit(evt){
+        evt.preventDefault();
+        evt.target.reset();
+    }
 
     render() {
         return (
             <React.Fragment className= "forms">
             
-                <form className="ideaForm">
+                <form  onSubmit={this.handleSubmit.bind(this)} className="ideaForm">
                     <div className="test">
                         <label htmlFor="IdeaName">What do you have in your mind?</label>
                         <Input type="textarea" required

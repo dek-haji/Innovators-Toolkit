@@ -11,8 +11,7 @@ export class Idea extends Component {
     return (
       <div>
         <IdeaForm addIdea={this.props.addIdea}
-          history={this.props.history}
-        />
+          history={this.props.history}/>
 
         <IdeaList okIdea={this.props.okIdea}
           deleteOkIdea={this.props.deleteOkIdea} 

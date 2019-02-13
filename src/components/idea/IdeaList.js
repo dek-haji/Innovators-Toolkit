@@ -45,13 +45,14 @@ export default class IdeaList extends Component {
       }
       componentDidUpdate(prevProps) {
         
-        if (this.props.categoryId !== prevProps.categoryId) {
-          this.fetchData(this.props.categoryId);
-        }
-            
-
-        
-    
+        if (this.props.okIdea !== prevProps.okIdea) {
+         
+            IdeaManager.getOkIdeas(this.props.okIdea)
+            .then(newIdea => 
+                this.setState({
+                    idea:newIdea
+                })
+            )}
       }
     
     render()

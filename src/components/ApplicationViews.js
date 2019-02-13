@@ -62,12 +62,7 @@ export default class ApplicationViews extends Component {
 
 
     }
-    componentDidUpdate(prevProps) {
-        // Typical usage (don't forget to compare props):
-        if (this.props.userId !== prevProps.userId) {
-          this.fetchData(this.props.userId);
-        }
-      }
+    
     addIdea = (idea) => IdeaManager.post(idea)
         .then(() => IdeaManager.getOkIdeas())
         .then(AllIdea => this.setState({
@@ -132,12 +127,17 @@ export default class ApplicationViews extends Component {
         return IdeaManager.changeComponent(id, idea)
         .then(()=> IdeaManager.getBetterIdeas())
             .then(idea => this.setState({
-                betterIdea: idea,
-                okIdea: idea
+                betterIdea: idea
                 
                
                 
+           
             }))
+            .then(()=> IdeaManager.getOkIdeas())
+            .then(idea => this.setState({
+                okIdea: idea
+            }))
+           
     }
     forwardComponent2 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
@@ -147,6 +147,10 @@ export default class ApplicationViews extends Component {
                 
                
                 
+            }))
+            .then(()=> IdeaManager.getOkIdeas())
+            .then(idea => this.setState({
+                betterIdea: idea
             }))
     }
     updateComponent = () => {
