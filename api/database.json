@@ -1,16 +1,10 @@
 {
   "idea": [
     {
-      "idea": "test1",
-      "userId": 12,
-      "categoryId": 1,
-      "id": 3
-    },
-    {
-      "idea": "ergfdghfhhgh",
-      "categoryId": 1,
-      "userId": null,
-      "id": 4
+      "idea": "console.log",
+      "categoryId": 2,
+      "userId": 28,
+      "id": 1
     }
   ],
   "categories": [
@@ -117,9 +111,6 @@
       "id": 25
     },
     {
-      "id": 26
-    },
-    {
       "name": "leah",
       "email": "leah@email.com",
       "id": 27
@@ -128,15 +119,6 @@
       "name": "leah1",
       "email": "leah1@email.com",
       "id": 28
-    },
-    {
-      "id": 29
-    },
-    {
-      "id": 30
-    },
-    {
-      "id": 31
     }
   ]
 }

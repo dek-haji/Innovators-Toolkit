@@ -6,8 +6,8 @@ import { Input, Button } from "reactstrap"
 export default class Forward extends Component {
   state = {
     idea: "",
-
-    userId: ""
+    userId: "",
+    categoryId: ""
   }
 
   handleFieldChange = evt => {
@@ -16,26 +16,28 @@ export default class Forward extends Component {
     this.setState(stateToChange)
   }
 
-  updateExistingIdea = evt => {
+  updateExistingComponent = evt => {
     evt.preventDefault()
 
-    const existingIdea = {
+    const existingComponent = {
       idea: this.state.idea,
-      userId: this.state.userId,
-      category:"Better"
+      userId: 10,
+      categoryId: 2
     }
     console.log("match.params.id:", this.props.match.params.ideaId)
-    console.log("existingIdea:", existingIdea);
+    console.log("existingIdea:", existingComponent);
     
-    this.props.editIdea(this.props.match.params.ideaId, existingIdea).then(() => this.props.history.push("/idea"))
+    this.props.forwardComponent(this.props.match.params.ideaId, existingComponent)
+    .then(() => this.props.history.push("/idea"))
   }
-  componentDidMount() {
-    IdeaManager.get(this.props.match.params.ideaId).then(idea => {
+  componentDidMount() {    
+    IdeaManager.get(this.props.match.params.ideaId)
+    .then(idea => {
       this.setState({
         idea: idea.idea,
         userId: idea.userId,
-        category: idea.category
-      })
+        categoryId: 2
+      })      
     })
   }
   render() {
@@ -51,9 +53,8 @@ export default class Forward extends Component {
               placeholder="anything " />
           </div>
 
-          <Button type="submit" onClick={this.updateExistingIdea} className="btn btn-primary">Update</Button>
+          <Button type="submit" onClick={this.props.forwardComponent} className="btn btn-primary">Forward</Button>
         </form>
-
 
 
 
@@ -62,3 +63,4 @@ export default class Forward extends Component {
     )
   }
 }
+// {this.updateExistingComponent}

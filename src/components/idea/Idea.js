@@ -13,7 +13,8 @@ export class Idea extends Component {
         />
 
         <IdeaList okIdea={this.props.okIdea}
-          deleteOkIdea={this.props.deleteOkIdea} />
+          deleteOkIdea={this.props.deleteOkIdea} 
+          forwardComponent={this.props.forwardComponent} />
         <BetterForm betterIdea={this.props.betterIdea}
           deleteBetterIdea={this.props.deleteBetterIdea} />
         <BestForm bestIdea={this.props.bestIdea}

@@ -24,7 +24,19 @@ export default {
           },
           body: JSON.stringify(idea)
         }).then(data => data.json());
+          
         },
+        
+        changeComponent (id, idea) {
+          return fetch(`http://localhost:5002/idea/${id}`, {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(idea)
+            }).then(data => data.json());
+            },
+
 
         getOkIdeas() {
           return fetch(`${remoteURL}/idea?categoryId=1`).then(e => e.json());

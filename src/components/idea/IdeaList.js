@@ -2,14 +2,47 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import { Card, CardColumns, CardText, CardBody, Button, } from "reactstrap"
 import "./Idea.css"
+import IdeaManager from "../modules/IdeaManager"
 
 
 
 export default class IdeaList extends Component {
    
-    handleClick() {
-        console.log('Click happened');
-    }
+    state = {
+        idea: "",
+        userId: "",
+        categoryId: ""
+      }
+    
+      handleFieldChange = evt => {
+        const stateToChange = {}
+        stateToChange[evt.target.id] = evt.target.value
+        this.setState(stateToChange)
+      }
+    
+      updateExistingComponent = (evt) => {
+        evt.preventDefault()
+    
+        const existingComponent = {
+          categoryId: 2
+        }
+        console.log("this.state.idea.id:", evt.target.id)
+        console.log("existingIdea:", existingComponent);
+        
+        this.props.forwardComponent(evt.target.id, existingComponent)
+        // .then(() => this.props.history.push("/idea"))
+      }
+      componentDidMount() {    
+        IdeaManager.get(this.state.idea.id)
+        .then(idea => {
+          this.setState({
+            idea: idea.idea,
+            userId: idea.userId,
+            categoryId: 2
+          })      
+        })
+      }
+    
     render(){
     return(
         <CardColumns>
@@ -25,14 +58,17 @@ export default class IdeaList extends Component {
                  <CardText>{idea.idea} </CardText>
                  
                 <Button color="secondary">
-                  <a href= "#"
+                  <button
                   onClick={() => this.props.deleteOkIdea(idea.id)} 
-                  className="card-link">Delete</a>
+                  className="card-link">Delete</button>
                   
                   </Button>
                   </CardBody>
                   <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
-                  <button onClick={this.handleClick}>Click Me</button>
+                  <button id= {idea.id}
+                  onClick= {this.updateExistingComponent}
+                  className="card-link">Forward</button>
+                 
                  
                   </Card>
             )

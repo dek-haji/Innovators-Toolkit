@@ -56,7 +56,8 @@ export default class ApplicationViews extends Component {
 
             })
         this.updateComponent()
-        this.addUser()
+        // this.addUser()
+        // Hannah: commented out to keep new user from being added on
 
 
     }
@@ -75,7 +76,7 @@ export default class ApplicationViews extends Component {
             method: "DELETE"
         })
             .then(e => e.json())
-            .then(() => fetch(`http://localhost:5002/idea`))
+            .then(() => fetch(`http://localhost:5002/idea?categoryId=1`))
             .then(e => e.json())
             .then(idea => this.setState({
                 okIdea: idea,
@@ -111,7 +112,7 @@ export default class ApplicationViews extends Component {
     
     editIdea = (id, idea) => {
         return IdeaManager.updateIdea(id, idea)
-        .then(()=> IdeaManager.getAll())
+        .then(()=> IdeaManager.getOkIdeas())
             .then(idea => this.setState({
                 okIdea: idea
                 
@@ -119,6 +120,18 @@ export default class ApplicationViews extends Component {
                 
             }))
     }
+
+    forwardComponent = (id, idea) => {
+        return IdeaManager.changeComponent(id, idea)
+        .then(()=> IdeaManager.getBetterIdeas())
+            .then(idea => this.setState({
+                forwardComponent: idea
+                
+               
+                
+            }))
+    }
+
     updateComponent = () => {
 
         UsersManager.getAll().then(allUsers => {
@@ -155,7 +168,9 @@ export default class ApplicationViews extends Component {
                                     deleteBetterIdea={this.deleteBetterIdea}
                                     deleteBestIdea={this.deleteBestIdea}
                                     betterIdea={this.state.betterIdea}
-                                    bestIdea={this.state.bestIdea} />
+                                    bestIdea={this.state.bestIdea} 
+                                    forwardComponent={this.forwardComponent}
+                                    />
                     }}
                 />
                  
@@ -164,6 +179,7 @@ export default class ApplicationViews extends Component {
                         return <IdeaEditForm {...props}
                         editIdea={this.editIdea} 
                         idea={this.state.idea}
+                        
                             />
                     } else {
                         return <Redirect to="/login" />

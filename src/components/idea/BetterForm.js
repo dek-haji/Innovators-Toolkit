@@ -6,7 +6,14 @@ import "./Better.css"
 
 
 export default class BetterForm extends Component {
-   
+    // Set initial state
+    state = {
+        idea: "",
+        userId: "",
+        categoryId: ""
+       
+        
+    }
     
     render(){
     return( 
@@ -23,9 +30,9 @@ export default class BetterForm extends Component {
                  <CardText >{idea.idea} </CardText>
                  
                 <Button color="secondary">
-                  <a href= "#"
+                  <button
                   onClick={() => this.props.deleteBetterIdea(idea.id)} 
-                  className="card-link">Delete</a>
+                  className="card-link">Delete</button>
                   
                   </Button>
                   </CardBody>

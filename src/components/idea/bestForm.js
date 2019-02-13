@@ -23,9 +23,9 @@ export default class BestForm extends Component {
                  <CardText >{idea.idea} </CardText>
                  
                 <Button color="secondary">
-                  <a href= "#"
+                  <button
                   onClick={() => this.props.deleteBestIdea(idea.id)} 
-                  className="card-link">Delete</a>
+                  className="card-link">Delete</button>
                   
                   </Button>
                   </CardBody>

@@ -1,5 +1,11 @@
 .betterIdeas{
+    display: flex;
+    align-items: center;
+justify-content: center;
     text-align: center;
-
-    position: relative;
+}
+.BestIdea{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
 }
