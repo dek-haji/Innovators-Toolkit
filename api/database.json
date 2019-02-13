@@ -1,18 +1,5 @@
 {
-  "idea": [
-    {
-      "idea": "sdsds",
-      "categoryId": 3,
-      "userId": 28,
-      "id": 1
-    },
-    {
-      "idea": "rwerwer",
-      "categoryId": 3,
-      "userId": 28,
-      "id": 2
-    }
-  ],
+  "idea": [],
   "categories": [
     {
       "id": 1,

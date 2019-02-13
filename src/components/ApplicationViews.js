@@ -132,7 +132,8 @@ export default class ApplicationViews extends Component {
         return IdeaManager.changeComponent(id, idea)
         .then(()=> IdeaManager.getBetterIdeas())
             .then(idea => this.setState({
-                betterIdea: idea
+                betterIdea: idea,
+                okIdea: idea
                 
                
                 
