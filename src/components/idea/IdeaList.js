@@ -60,9 +60,9 @@ export default class IdeaList extends Component {
     render() {
         console.log(this.props)
         return (
-            <CardColumns>
+           
 
-                <Card body outline color="secondary" className="ideas" >
+                <Card body outline color="secondary" className="ideas12" >
                     <h1>ok idea</h1>
                     {
                         this.props.okIdea.map(idea =>
@@ -89,7 +89,7 @@ export default class IdeaList extends Component {
                         )
                     }
                 </Card>
-            </CardColumns>
+            
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
-import "./Best.css"
+import "./Idea.css"
 
 
 
@@ -13,7 +13,7 @@ export default class BestForm extends Component {
       
         <CardColumns className= "BestIdea">
          
-        <Card body outline color="secondary"className="ideas" >
+        <Card body outline color="secondary"className="ideas3" >
         <h1>Best Idea</h1>
         {
             this.props.bestIdea.map(idea => 

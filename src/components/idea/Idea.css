@@ -1,17 +1,32 @@
-.card-text{
-   
-    background-color: white
-}
-.card{
-    background-color: lightgray
-}
-.BestIdea{
+.ideas12{
+    
     display: flex;
     justify-content: space-around;
-align-items: flex-end;
+    justify-content: space-around;
+   
+    max-width: 32%;
+}
+.dek{
+    background-color:lightgrey;
+    display: flexbox;
+
+}
+.dek > *:nth-child(2){
+   display: flex;
+   justify-content: center;
+   align-content: center
+   
+
+}
+.ideaForm1{
+    max-width: 32%;
 }
 .betterIdeas{
     display: flex;
-    align-items: center;
-justify-content: center;
+    justify-content: center;
+    max-width: 32%;
+    align-content: flex-end
+}
+.ideas12{
+    
 }

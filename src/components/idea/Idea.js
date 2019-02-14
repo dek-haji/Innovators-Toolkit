@@ -3,13 +3,14 @@ import IdeaList from './IdeaList';
 import IdeaForm from './IdeaForm';
 import BestForm from './bestForm';
 import BetterForm from './BetterForm';
+import "./Idea.css"
 
 export class Idea extends Component {
 
   render() {
 
     return (
-      <div>
+      <div className =" dek">
         <IdeaForm addIdea={this.props.addIdea}
           history={this.props.history} />
 

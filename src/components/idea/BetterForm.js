@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import IdeaManager from "../modules/IdeaManager"
 import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
-import "./Better.css"
-
+import "./Idea.css"
 
 
 export default class BetterForm extends Component {
@@ -58,7 +57,7 @@ export default class BetterForm extends Component {
 
             <CardColumns className="betterIdeas" >
 
-                <Card body outline color="secondary" className="ideas" >
+                <Card body outline color="secondary" className="ideas2" >
                     <h1>Better Idea</h1>
                     {
                         this.props.betterIdea.map(idea =>
@@ -76,7 +75,7 @@ export default class BetterForm extends Component {
                                             className="card-link">Forward</button>
                                     
                                 </CardBody>
-                                {/* <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link> */}
+                               
 
                             </Card>
                         )
