@@ -49,7 +49,8 @@ export default class IdeaEditForm extends Component {
             <Input type="textarea" required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="idea"
+              id= "idea"
+              value = {this.state.idea}
               placeholder="anything " />
           </div>
 

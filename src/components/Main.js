@@ -9,22 +9,22 @@ import ApplicationViews from "./ApplicationViews";
 
 class Main extends Component {
     isAuthenticated = () => sessionStorage.getItem("username") !== null
-    showNav =() => {
+    showNav = () => {
         if (this.isAuthenticated()) {
             return <NavBar />
-        }else {
+        } else {
             return null
         }
     }
 
 
-    
+
     render() {
         return (
             <React.Fragment>
                 {this.showNav()}
-              <ApplicationViews />
-              
+                <ApplicationViews />
+
             </React.Fragment>
         )
     }

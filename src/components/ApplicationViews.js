@@ -18,33 +18,33 @@ export default class ApplicationViews extends Component {
         okIdea: [],
         betterIdea: [],
         bestIdea: [],
-        users:[]
+        users: []
 
-       
+
     };
     isAuthenticated = () => sessionStorage.getItem("username") !== null
     componentDidMount() {
 
         IdeaManager.getOkIdeas()
-        .then(okIdeas => {
-            this.setState({
-                okIdea: okIdeas
+            .then(okIdeas => {
+                this.setState({
+                    okIdea: okIdeas
+                })
             })
-        })
 
         IdeaManager.getBetterIdeas()
-        .then(better => {
-            this.setState({
-                betterIdea: better
+            .then(better => {
+                this.setState({
+                    betterIdea: better
+                })
             })
-        })
 
         IdeaManager.getBestIdeas()
-        .then(best => {
-            this.setState({
-                bestIdea: best
+            .then(best => {
+                this.setState({
+                    bestIdea: best
+                })
             })
-        })
         const newState = {}
 
         fetch("http://localhost:5002/idea")
@@ -62,7 +62,7 @@ export default class ApplicationViews extends Component {
 
 
     }
-    
+
     addIdea = (idea) => IdeaManager.post(idea)
         .then(() => IdeaManager.getOkIdeas())
         .then(AllIdea => this.setState({
@@ -82,7 +82,7 @@ export default class ApplicationViews extends Component {
             .then(e => e.json())
             .then(idea => this.setState({
                 okIdea: idea,
-                
+
             }))
     }
     deleteBetterIdea = id => {
@@ -94,7 +94,7 @@ export default class ApplicationViews extends Component {
             .then(e => e.json())
             .then(idea => this.setState({
                 betterIdea: idea,
-                
+
             }))
     }
     deleteBestIdea = id => {
@@ -106,49 +106,49 @@ export default class ApplicationViews extends Component {
             .then(e => e.json())
             .then(idea => this.setState({
                 bestIdea: idea,
-                
+
             }))
     }
 
 
-    
+
     editIdea = (id, idea) => {
         return IdeaManager.updateIdea(id, idea)
-        .then(()=> IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getOkIdeas())
             .then(idea => this.setState({
                 okIdea: idea
-                
-               
-                
+
+
+
             }))
     }
 
     forwardComponent1 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
-        .then(()=> IdeaManager.getBetterIdeas())
+            .then(() => IdeaManager.getBetterIdeas())
             .then(idea => this.setState({
                 betterIdea: idea
-                
-               
-                
-           
+
+
+
+
             }))
-            .then(()=> IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getOkIdeas())
             .then(idea => this.setState({
                 okIdea: idea
             }))
-           
+
     }
     forwardComponent2 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
-        .then(()=> IdeaManager.getBestIdeas())
+            .then(() => IdeaManager.getBestIdeas())
             .then(idea => this.setState({
                 bestIdea: idea
-                
-               
-                
+
+
+
             }))
-            .then(()=> IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getOkIdeas())
             .then(idea => this.setState({
                 betterIdea: idea
             }))
@@ -182,27 +182,27 @@ export default class ApplicationViews extends Component {
                 <Route
                     exact
                     path="/idea" render={props => {
-                        return <Idea {...props} 
-                                    okIdea={this.state.okIdea}
-                                    addIdea={this.addIdea}
-                                    deleteOkIdea={this.deleteOkIdea}
-                                    deleteBetterIdea={this.deleteBetterIdea}
-                                    deleteBestIdea={this.deleteBestIdea}
-                                    betterIdea={this.state.betterIdea}
-                                    bestIdea={this.state.bestIdea} 
-                                    forwardComponent1={this.forwardComponent1}
-                                    forwardComponent2={this.forwardComponent2}
-                                    />
+                        return <Idea {...props}
+                            okIdea={this.state.okIdea}
+                            addIdea={this.addIdea}
+                            deleteOkIdea={this.deleteOkIdea}
+                            deleteBetterIdea={this.deleteBetterIdea}
+                            deleteBestIdea={this.deleteBestIdea}
+                            betterIdea={this.state.betterIdea}
+                            bestIdea={this.state.bestIdea}
+                            forwardComponent1={this.forwardComponent1}
+                            forwardComponent2={this.forwardComponent2}
+                        />
                     }}
                 />
-                 
+
                 <Route path="/idea/:ideaId(\d+)/edit" render={props => {
                     if (this.isAuthenticated()) {
                         return <IdeaEditForm {...props}
-                        editIdea={this.editIdea} 
-                        idea={this.state.idea}
-                        
-                            />
+                            editIdea={this.editIdea}
+                            idea={this.state.idea}
+
+                        />
                     } else {
                         return <Redirect to="/login" />
                     }
@@ -221,7 +221,7 @@ export default class ApplicationViews extends Component {
                     }
 
                 }} /> */}
-                 {/* <Route path="/idea/:ideaId(\d+)/edit" render={props => {
+                {/* <Route path="/idea/:ideaId(\d+)/edit" render={props => {
                     if (this.isAuthenticated()) {
                         return <Forward {...props}
                         editIdea={this.editIdea} 
@@ -231,7 +231,7 @@ export default class ApplicationViews extends Component {
                         return <Redirect to="/login" />
                     }
                 }} /> */}
-                
+
             </React.Fragment>
         )
     }

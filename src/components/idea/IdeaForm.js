@@ -8,8 +8,8 @@ export default class IdeaForm extends Component {
         idea: "",
         userId: "",
         categoryId: 1,
-       
-        
+
+
     }
 
     // Update state whenever an input field is edited
@@ -18,7 +18,7 @@ export default class IdeaForm extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
-   
+
 
     /*
         Local method for validation, creating idea object, and
@@ -28,40 +28,40 @@ export default class IdeaForm extends Component {
         let sessionUser = sessionStorage.getItem("userId");
         evt.preventDefault()
 
-            const idea = {
-                idea: this.state.idea,
-                categoryId: this.state.categoryId,
-                userId: Number(sessionUser)
-            }
+        const idea = {
+            idea: this.state.idea,
+            categoryId: this.state.categoryId,
+            userId: Number(sessionUser)
+        }
 
-            this.props.addIdea(idea).then(() => this.props.history.push("/idea"))
+        this.props.addIdea(idea).then(() => this.props.history.push("/idea"))
 
     }
-    handleSubmit(evt){
-        evt.preventDefault();
+    handleSubmit(evt) {
+
         evt.target.reset();
     }
 
     render() {
         return (
-            <React.Fragment className= "forms">
-            
-                <form  onSubmit={this.handleSubmit.bind(this)} className="ideaForm">
+            <React.Fragment className="forms">
+
+                <form onSubmit={this.handleSubmit.bind(this)} className="ideaForm">
                     <div className="test">
                         <label htmlFor="IdeaName">What do you have in your mind?</label>
                         <Input type="textarea" required
-                               className="form-control"
-                               onChange={this.handleFieldChange}
-                               id="idea"
-                               placeholder="anything"
-                               />
+                            className="form-control"
+                            onChange={this.handleFieldChange}
+                            id="idea"
+                            placeholder="anything"
+                        />
                     </div>
-                   
+
                     <Button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</Button>
                 </form>
-                    
 
-                
+
+
 
             </React.Fragment>
         )
