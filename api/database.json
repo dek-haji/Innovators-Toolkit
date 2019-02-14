@@ -1,12 +1,5 @@
 {
-  "idea": [
-    {
-      "idea": "hellow",
-      "categoryId": 3,
-      "userId": 28,
-      "id": 1
-    }
-  ],
+  "idea": [],
   "categories": [
     {
       "id": 1,

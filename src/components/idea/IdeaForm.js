@@ -38,26 +38,28 @@ export default class IdeaForm extends Component {
 
     }
     handleSubmit(evt) {
-
+        evt.preventDefault();
         evt.target.reset();
     }
+   
 
     render() {
         return (
-            <React.Fragment className="forms">
+            <React.Fragment key="forms" >
 
-                <form onSubmit={this.handleSubmit.bind(this)} className="ideaForm">
-                    <div className="test">
+                <form key="ideaForm" onSubmit={this.handleSubmit.bind(this)}>
+                    <div key="test">
                         <label htmlFor="IdeaName">What do you have in your mind?</label>
                         <Input type="textarea" required
-                            className="form-control"
+                            key="form-control"
                             onChange={this.handleFieldChange}
+                            onSubmit={this.handleSubmit.bind(this.state)}
                             id="idea"
                             placeholder="anything"
                         />
                     </div>
 
-                    <Button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</Button>
+                    <Button type="submit"  onClick={this.constructNewIdea} color="success">Add Idea</Button>
                 </form>
 
 

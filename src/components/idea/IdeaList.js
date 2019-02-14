@@ -19,6 +19,7 @@ export default class IdeaList extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
+    
 
     updateExistingComponent = (evt) => {
         evt.preventDefault()
@@ -71,12 +72,12 @@ export default class IdeaList extends Component {
 
                                     <CardText>{idea.idea} </CardText>
 
-                                    <Button color="secondary">
+                                   
                                         <button
                                             onClick={() => this.props.deleteOkIdea(idea.id)}
                                             className="card-link">Delete</button>
 
-                                    </Button>
+                                    
                                 </CardBody>
                                 <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
                                 <button id={idea.id}

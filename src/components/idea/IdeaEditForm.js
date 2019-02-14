@@ -21,7 +21,7 @@ export default class IdeaEditForm extends Component {
 
     const existingIdea = {
       idea: this.state.idea,
-      userId: 12,
+      userId: this.state.userId,
       categoryId: this.state.categoryId
     }
     console.log("match.params.id:", this.props.match.params.ideaId)
