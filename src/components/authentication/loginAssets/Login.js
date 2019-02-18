@@ -1,15 +1,15 @@
 import React, { Component } from "react"
 import "./Login.css"
 import { Link } from "react-router-dom"
-import picpic from "../loginAssets/picpic.png"
+import brain from "../loginAssets/brain.png"
 
 
 
 export default class Login extends Component {
     // Set initial state
     state = {
-        username: "",
-        password: ""
+        email: "",
+        username: ""
     }
 
     // Update state whenever an input field is edited
@@ -31,10 +31,11 @@ export default class Login extends Component {
 
         let currentUser = sessionStorage.getItem("username")
         let authenticated = this.props.users.find(user =>
-            user.name === currentUser)
+            user.name === this.state.username)
+            console.log(currentUser)
+            console.log(this.props)
 
-
-            console.log(authenticated.id)
+            console.log(authenticated)
 
             sessionStorage.setItem(
                 "userId",
@@ -42,13 +43,13 @@ export default class Login extends Component {
 
             if (authenticated === undefined){
                 alert("Whoops! We we couldn't find your account. Please re-renter a valid username and email or sign up below!")
-                window.location.reload()
+                
                 // this.props.history.push("/register")
             } else {
                 // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
                 this.props.updateComponent()
                 // Taking user to news page
-                this.props.history.push("/")
+                this.props.history.push("/idea")
             }
     }
 
@@ -61,7 +62,7 @@ export default class Login extends Component {
         return (
             <section className="login">
                 <form className="registerContainer" onSubmit={this.handleLogin}>
-                <img src={picpic} className="acornIcon" alt="acornIcon" height="60" width="60"></img>
+                <img src={brain} className="acornIcon" alt="acornIcon" height="60" width="60"></img>
                     <h2>Please sign in</h2>
                     <label htmlFor="inputUsername">
                     </label> <br></br>

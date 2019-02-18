@@ -1,17 +1,17 @@
 {
-  "idea": [
+  "idea": [],
+  "categories": [
     {
-      "idea": "whatsssss uppppp.",
-      "id": 5
+      "id": 1,
+      "name": "ok"
     },
     {
-      "idea": "dfd",
-      "id": 7,
-      "userId": 1
+      "id": 2,
+      "name": "better"
     },
     {
-      "idea": "test1",
-      "id": 8
+      "id": 3,
+      "name": "best"
     }
   ],
   "users": [
@@ -41,14 +41,87 @@
       "id": 5
     },
     {
-      "name": "",
-      "email": "",
-      "id": 6
-    },
-    {
       "name": "dek.haji",
       "email": "deeeqhaji@gmail.com",
       "id": 7
+    },
+    {
+      "name": "deeq",
+      "email": "deeeqhaji@gmail.com",
+      "id": 8
+    },
+    {
+      "name": "test3",
+      "email": "test3@email.com",
+      "id": 9
+    },
+    {
+      "name": "onetwo@email.com",
+      "email": "one@email.com",
+      "id": 10
+    },
+    {
+      "name": "register",
+      "email": "register@email.com",
+      "id": 11
+    },
+    {
+      "name": "create1",
+      "email": "create1@email.com",
+      "id": 12
+    },
+    {
+      "name": "good",
+      "email": "good1@email.com",
+      "id": 13
+    },
+    {
+      "name": "hithere",
+      "email": "hithere@email.com",
+      "id": 14
+    },
+    {
+      "name": "1234",
+      "email": "1234@email.com",
+      "id": 16
+    },
+    {
+      "name": "signup",
+      "email": "signup@email.com",
+      "id": 20
+    },
+    {
+      "name": "1122",
+      "email": "1122@email.com",
+      "id": 23
+    },
+    {
+      "id": 24
+    },
+    {
+      "name": "112233",
+      "email": "112233",
+      "id": 25
+    },
+    {
+      "name": "leah",
+      "email": "leah@email.com",
+      "id": 27
+    },
+    {
+      "name": "leah1",
+      "email": "leah1@email.com",
+      "id": 28
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 29
+    },
+    {
+      "name": "leah2",
+      "email": "leah2@email.com",
+      "id": 30
     }
   ]
 }

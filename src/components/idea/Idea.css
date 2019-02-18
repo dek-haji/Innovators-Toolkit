@@ -1,0 +1,37 @@
+.ideas12{
+    
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-around;
+   
+    max-width: 32%;
+}
+.dek{
+    background-color:lightgrey;
+    display: flex;
+    max-width: 100%
+
+}
+.dek > *:nth-child(2){
+   display: flex;
+   justify-content: center;
+   align-content: center
+   
+
+}
+.ideaForm1{
+    max-width: 32%;
+}
+.betterIdeas{
+    display: flex;
+    justify-content: center;
+    max-width: 32%;
+    align-content: flex-end
+}
+.card {
+    display: flex;
+}
+.card-text{
+    border: 1px solid grey;
+    box-shadow: 1px red
+}

@@ -1,11 +1,11 @@
-import React, { Component } from "react"
+// import React, { Component } from "react"
 
 
-export default class IdeaCard extends Component {
-    render(){
-        return(
-            <h1>Its working</h1>
+// export default class IdeaCard extends Component {
+//     render(){
+//         return(
+//             <h1>Its working</h1>
 
-        )
-    }
-}
+//         )
+//     }
+// }

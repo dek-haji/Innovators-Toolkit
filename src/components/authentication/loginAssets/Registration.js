@@ -6,17 +6,19 @@ import SignUpManager from '../../modules/SignUpManager'
 
 
 
-export default class Login extends Component {
+export default class Register extends Component {
 
     // Set initial state
     state = {
         name: "",
-        email: "",
-        id:""
+        email: ""
+        // id:""
+        // Hannah commented out id: ""
     }
 
     // Update state whenever an input field is edited
     handleFieldChange = (evt) => {
+        evt.preventDefault(); // Hannah added evt.preventDefault();
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
@@ -52,7 +54,7 @@ export default class Login extends Component {
             this.props.addUser(user).then(response => {
                 console.log(response)
                 this.props.history.push("/login")
-                window.location.reload();
+                
             })
     }
 
