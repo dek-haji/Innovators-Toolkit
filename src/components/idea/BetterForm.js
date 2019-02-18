@@ -64,7 +64,7 @@ export default class BetterForm extends Component {
                     {
                         this.props.betterIdea.map(idea =>
                             <Card key={idea.id} className="card" >
-                                <CardBody body outline color="primary" className="card-body">
+                              
 
                                     <CardText >{idea.idea} </CardText>
 
@@ -76,7 +76,7 @@ export default class BetterForm extends Component {
                                             onClick={this.updateExistingComponent}
                                             className="card-link">Forward</button>
                                     
-                                </CardBody>
+                                
                                
 
                             </Card>

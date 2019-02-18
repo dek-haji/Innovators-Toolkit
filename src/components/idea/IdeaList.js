@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import { Card, CardColumns, CardText, CardBody, Button, } from "reactstrap"
+
 import "./Idea.css"
 import IdeaManager from "../modules/IdeaManager"
 
@@ -19,7 +20,7 @@ export default class IdeaList extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
-    
+
 
     updateExistingComponent = (evt) => {
         evt.preventDefault()
@@ -60,36 +61,37 @@ export default class IdeaList extends Component {
     render() {
         console.log(this.props)
         return (
-           
 
-                <Card body outline color="secondary" className="ideas12" >
-                    <h2>Free writting</h2>
-                    {
-                        this.props.okIdea.map(idea =>
-                            <Card key={idea.id} className="card">
 
-                                <CardBody body outline color="primary" className="card-body">
+            <Card body outline color="secondary" className="ideas12" >
+                <h2>Free writting</h2>
+                {
+                    this.props.okIdea.map(idea =>
+                        <Card key={idea.id} className="card">
 
-                                    <CardText>{idea.idea} </CardText>
+                            <CardBody className="card-body">
 
+                                <CardText>{idea.idea} </CardText>
+
+
+                                <Button 
                                    
-                                        <Button
-                                            onClick={() => this.props.deleteOkIdea(idea.id)}
-                                            className="card-link">Delete</Button>
-
-                                    
-                                </CardBody>
-                                <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
-                                <Button id={idea.id}
-                                    onClick={this.updateExistingComponent}
-                                    className="card-link">Forward</Button>
+                                    onClick={() => this.props.deleteOkIdea(idea.id)}
+                                    className="card-link">Delete</Button>
 
 
-                            </Card>
-                        )
-                    }
-                </Card>
-            
+                            </CardBody>
+                            <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
+                            <Button id={idea.id}
+                                onClick={this.updateExistingComponent}
+                                className="card-link">Forward</Button>
+
+
+                        </Card>
+                    )
+                }
+            </Card>
+
         )
     }
 }
