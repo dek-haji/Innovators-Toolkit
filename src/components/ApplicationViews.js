@@ -148,7 +148,7 @@ export default class ApplicationViews extends Component {
 
 
             }))
-            .then(() => IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getBetterIdeas())
             .then(idea => this.setState({
                 betterIdea: idea
             }))

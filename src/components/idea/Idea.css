@@ -8,7 +8,8 @@
 }
 .dek{
     background-color:lightgrey;
-    display: flexbox;
+    display: flex;
+    max-width: 100%
 
 }
 .dek > *:nth-child(2){
@@ -27,6 +28,10 @@
     max-width: 32%;
     align-content: flex-end
 }
-.ideas12{
-    
+.card {
+    display: flex;
+}
+.card-text{
+    border: 1px solid grey;
+    box-shadow: 1px red
 }

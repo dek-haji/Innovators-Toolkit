@@ -50,7 +50,7 @@ export default class IdeaForm extends Component {
 
     render() {
         return (
-            <React.Fragment key="forms" >
+           
 
                 <form class="ideaForm1" >
                    
@@ -71,7 +71,7 @@ export default class IdeaForm extends Component {
 
 
 
-            </React.Fragment>
+           
         )
     }
 }

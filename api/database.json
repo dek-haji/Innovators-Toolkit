@@ -1,22 +1,10 @@
 {
   "idea": [
     {
-      "idea": "ededewde",
-      "categoryId": 3,
-      "userId": 28,
-      "id": 2
-    },
-    {
-      "idea": "dffdsfsdm,fdslmnflsdkfsldnfdlsmcdmcndlskcnldkscvnslkvnfsdklvnscvnsclvnslvnsfljvndfs",
-      "categoryId": 2,
-      "userId": 28,
-      "id": 7
-    },
-    {
-      "idea": "whats up?\n",
+      "idea": "test 12",
+      "userId": "",
       "categoryId": 1,
-      "userId": 28,
-      "id": 8
+      "id": 1
     }
   ],
   "categories": [
@@ -131,6 +119,11 @@
       "name": "leah1",
       "email": "leah1@email.com",
       "id": 28
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 29
     }
   ]
 }

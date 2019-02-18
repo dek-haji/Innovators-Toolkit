@@ -49,7 +49,7 @@ export default class Login extends Component {
                 // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
                 this.props.updateComponent()
                 // Taking user to news page
-                this.props.history.push("/")
+                this.props.history.push("/idea")
             }
     }
 

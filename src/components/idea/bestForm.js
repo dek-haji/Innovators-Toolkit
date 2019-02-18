@@ -11,10 +11,10 @@ export default class BestForm extends Component {
     render(){
     return( 
       
-        <CardColumns className= "BestIdea">
-         
+       
+        
         <Card body outline color="secondary"className="ideas3" >
-        <h1>Best Idea</h1>
+        <h2>Best idea</h2>
         {
             this.props.bestIdea.map(idea => 
                 <Card key={idea.id} className="card">
@@ -35,6 +35,6 @@ export default class BestForm extends Component {
             )
         }
         </Card>
-        </CardColumns>
+   
     )
 }}

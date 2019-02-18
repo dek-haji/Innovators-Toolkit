@@ -40,16 +40,16 @@ export default class BetterForm extends Component {
                 })
             })
     }
-    componentDidUpdate(prevProps) {
+    // componentDidUpdate(prevProps) {
 
-        if (this.props.categoryId !== prevProps.categoryId) {
-            this.fetchData(this.props.categoryId);
-        }
-
-
+    //     if (this.props.categoryId !== prevProps.categoryId) {
+    //         this.fetchData(this.props.categoryId);
+    //     }
 
 
-    }
+
+
+    
 
 
     render() {
@@ -58,7 +58,7 @@ export default class BetterForm extends Component {
             <CardColumns className="betterIdeas" >
 
                 <Card body outline color="secondary" className="ideas2" >
-                    <h1>Better Idea</h1>
+                    <h2>Better idea</h2>
                     {
                         this.props.betterIdea.map(idea =>
                             <Card key={idea.id} className="card" >
