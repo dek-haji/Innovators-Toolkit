@@ -1,12 +1,5 @@
 {
-  "idea": [
-    {
-      "idea": "test 12",
-      "userId": "",
-      "categoryId": 1,
-      "id": 1
-    }
-  ],
+  "idea": [],
   "categories": [
     {
       "id": 1,
@@ -124,6 +117,11 @@
       "name": "",
       "email": "",
       "id": 29
+    },
+    {
+      "name": "leah2",
+      "email": "leah2@email.com",
+      "id": 30
     }
   ]
 }

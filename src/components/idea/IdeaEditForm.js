@@ -30,7 +30,8 @@ export default class IdeaEditForm extends Component {
     this.props.editIdea(this.props.match.params.ideaId, existingIdea)
     .then(() => this.props.history.push("/idea"))
   }
-  componentDidMount() {    
+  componentDidMount() { 
+    console.log(this.state.idea.id)   
     IdeaManager.get(this.props.match.params.ideaId)
     .then(idea => {
       this.setState({
