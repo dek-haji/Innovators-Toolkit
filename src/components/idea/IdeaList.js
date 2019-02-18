@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
-import { Card, CardColumns, CardText, CardBody, Button, } from "reactstrap"
+import { Card, CardText, CardBody } from "reactstrap"
 
 import "./Idea.css"
 import IdeaManager from "../modules/IdeaManager"
@@ -74,18 +74,18 @@ export default class IdeaList extends Component {
                                 <CardText>{idea.idea} </CardText>
 
 
-                                <Button 
+                                <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
+                                <button 
                                    
                                     onClick={() => this.props.deleteOkIdea(idea.id)}
-                                    className="card-link">Delete</Button>
+                                    className="card-link">Delete</button>
 
 
-                            </CardBody>
-                            <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
-                            <Button id={idea.id}
+                            <button id={idea.id}
                                 onClick={this.updateExistingComponent}
-                                className="card-link">Forward</Button>
+                                className="card-link">Forward</button>
 
+                                </CardBody>
 
                         </Card>
                     )

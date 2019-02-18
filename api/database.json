@@ -1,5 +1,24 @@
 {
-  "idea": [],
+  "idea": [
+    {
+      "idea": "test3",
+      "categoryId": 3,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "idea": "test2",
+      "categoryId": 2,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "idea": "test1",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 3
+    }
+  ],
   "categories": [
     {
       "id": 1,

@@ -1,7 +1,5 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom";
-import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
-import { Grid, Box } from "grommet";
+import { Card,  CardText, CardBody, } from "reactstrap"
 import "./Idea.css"
 
 
@@ -18,18 +16,17 @@ export default class BestForm extends Component {
         {
             this.props.bestIdea.map(idea => 
                 <Card key={idea.id} className="card">
-               
+               <CardBody className="card-body">
               
                  <CardText >{idea.idea} </CardText>
                  
                 
                   <button
-                  onClick={() => this.props.deleteBestIdea(idea.id)} 
-                  className="card-link">Delete</button>
+                  onClick={() => this.props.deleteBestIdea(idea.id)}>Delete</button>
                   
                   
                   
-                  
+                  </CardBody>
                  
                   </Card>
             )
