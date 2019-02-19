@@ -57,7 +57,7 @@ export default class ApplicationViews extends Component {
                 this.setState(newState)
 
             })
-        this.updateComponent()
+        // this.updateComponent()
         // this.addUser()
         // commented out to keep new user from being added on
 
@@ -190,7 +190,7 @@ export default class ApplicationViews extends Component {
                 <Route
                     exact
                     path="/idea" render={props => {
-                        if (this.isAuthenticated()) {      
+                        if (this.isAuthenticated()) {   // added that line so u we cant change the route manually.   
                         return <Idea {...props}
                             okIdea={this.state.okIdea}
                             addIdea={this.addIdea}

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Button, Input } from "reactstrap"
-import { Clock, Grid, Box } from "grommet";
+import { Clock, Box } from "grommet";
 import "./Idea.css"
 
 export default class IdeaForm extends Component {
@@ -12,6 +12,7 @@ export default class IdeaForm extends Component {
     
 
     }
+    // clear the input field whenever we submit.
     clearField = ()=> {
         
         this.setState({idea: ""})
@@ -23,6 +24,7 @@ export default class IdeaForm extends Component {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
+       
     }
     
    

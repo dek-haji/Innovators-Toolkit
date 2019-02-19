@@ -34,7 +34,7 @@ export default class Register extends Component {
         */
         sessionStorage.setItem(
             "credentials",
-            JSON.stringify({
+            JSON.stringify({        //The JSON.stringify() method converts a JavaScript object or value to a JSON string, 
                 name: this.state.name,
                 email: this.state.email,
                 // id: this.state.id

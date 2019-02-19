@@ -10,6 +10,8 @@ export default class BestForm extends Component {
     render(){
     return( 
       
+        // I have received an array containing multiple objects – each one representing bestIdea. 
+        // so we  gave each object a key, and the value of the key is ID. 
         
         <Card body outline color="secondary"className="ideas3" >
         <h2>Best idea</h2>

@@ -1,52 +1,22 @@
 {
   "idea": [
     {
-      "idea": "test3",
-      "categoryId": 3,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "idea": "test2",
+      "idea": "test1",
       "categoryId": 2,
-      "userId": 1,
-      "id": 2
+      "userId": 4,
+      "id": 1
     },
     {
       "idea": "test1",
       "categoryId": 3,
-      "userId": 1,
+      "userId": 4,
+      "id": 2
+    },
+    {
+      "idea": "test1",
+      "categoryId": 1,
+      "userId": 4,
       "id": 3
-    },
-    {
-      "idea": "test test test",
-      "categoryId": 2,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "idea": "hgjhjkhkj",
-      "categoryId": 1,
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "idea": "hellow",
-      "categoryId": 2,
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "idea": "dhfghfg",
-      "categoryId": 1,
-      "userId": 21,
-      "id": 9
-    },
-    {
-      "idea": "test",
-      "categoryId": 1,
-      "userId": 1,
-      "id": 10
     }
   ],
   "categories": [
@@ -73,131 +43,6 @@
       "name": "test",
       "email": "test@email.com",
       "id": 2
-    },
-    {
-      "name": "test1",
-      "email": "test1@email.com",
-      "id": 3
-    },
-    {
-      "name": "haji",
-      "email": "haji@email.com",
-      "id": 4
-    },
-    {
-      "name": "ali",
-      "email": "ali@email.com",
-      "id": 5
-    },
-    {
-      "name": "test12",
-      "email": "test12@email.com",
-      "id": 6
-    },
-    {
-      "name": "test22",
-      "email": "test22@email.com",
-      "id": 7
-    },
-    {
-      "name": "deeq",
-      "email": "deeq@email.com",
-      "id": 8
-    },
-    {
-      "name": "dek.haji",
-      "email": "dek.haji@email.com",
-      "id": 9
-    },
-    {
-      "name": "meme",
-      "email": "meme@email.com",
-      "id": 10
-    },
-    {
-      "name": "dd",
-      "email": "dd@email.com",
-      "id": 11
-    },
-    {
-      "name": "qq",
-      "email": "qq@emai.com",
-      "id": 12
-    },
-    {
-      "name": "ww",
-      "email": "ww@email.com",
-      "id": 13
-    },
-    {
-      "name": "ddd",
-      "email": "ddd@email.com",
-      "id": 14
-    },
-    {
-      "name": "ss",
-      "email": "ss@email.com",
-      "id": 15
-    },
-    {
-      "name": "holy",
-      "email": "holy@email.com",
-      "id": 16
-    },
-    {
-      "name": "hi",
-      "email": "hithere@email.com",
-      "id": 17
-    },
-    {
-      "name": "144",
-      "email": "144@email.com",
-      "id": 18
-    },
-    {
-      "name": "jd",
-      "email": "jd@email.com",
-      "id": 19
-    },
-    {
-      "name": "jd2",
-      "email": "jd2",
-      "id": 20
-    },
-    {
-      "name": "jd3",
-      "email": "jd3@email.com",
-      "id": 21
-    },
-    {
-      "name": "haji1",
-      "email": "haji1@email.com",
-      "id": 22
-    },
-    {
-      "name": "12345",
-      "email": "12345@email.com",
-      "id": 23
-    },
-    {
-      "name": "cool",
-      "email": "cool@email.com",
-      "id": 24
-    },
-    {
-      "name": "dek.haji",
-      "email": "ds@email.com",
-      "id": 25
-    },
-    {
-      "name": "haji1",
-      "email": "haji1@email.com",
-      "id": 26
-    },
-    {
-      "name": "dek.haji",
-      "email": "test@email.com",
-      "id": 27
     }
   ]
 }

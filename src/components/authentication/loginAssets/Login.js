@@ -2,8 +2,6 @@ import React, { Component } from "react"
 import "./Login.css"
 import { Link } from "react-router-dom"
 import brain from "../loginAssets/brain.png"
-import UsersManager from "../../modules/UsersManager"
-import IdeaManager from "../../modules/IdeaManager"
 
 
 export default class Login extends Component {
@@ -12,30 +10,6 @@ export default class Login extends Component {
         email: "",
         username: ""
     }
-// // trying to update the props.
-//     componentDidUpdate(prevProps) {
-
-//         if (this.props.username !== prevProps.username) {
-//             this.updateComponent(this.props.username);
-//         }
-
-
-// }
-
-
-// updateComponent = () => {
-
-//     UsersManager.getAll().then(allUsers => {
-//         this.setState({ users: allUsers });
-//         console.log(allUsers)
-//     })
-//     IdeaManager.getAll()
-//         .then(allIdea => {
-//             this.setState({
-//                 idea: allIdea
-//             })
-//         })
-// }
 
     // Update state whenever an input field is edited
     handleFieldChange = (evt) => {
@@ -58,7 +32,7 @@ export default class Login extends Component {
             this.state.username)
 
         let currentUser = sessionStorage.getItem("username")
-        //????
+        //we get the current user from the session storage.
         console.log(this.props.users)
         console.log(this.state)
         let authenticated = this.props.users.find(user =>
@@ -74,7 +48,7 @@ export default class Login extends Component {
 
             if (authenticated === undefined){
                 alert("Please re-renter a valid username and email or sign up below!")
-                
+        //if the user is not registered direct them to the registeration page.        
                 this.props.history.push("/register")
             } else {
                 sessionStorage.setItem(
@@ -90,7 +64,9 @@ export default class Login extends Component {
 
 
             
+
     }
+    //if the username is not equal to null remove everything in the session storage.
    componentDidMount() {
        if(sessionStorage.getItem("username") !== null){
            sessionStorage.removeItem("username")

@@ -7,6 +7,9 @@ import "./Idea.css"
 import NavBar from "../nav/NavBar"
 export class Idea extends Component {
 
+
+
+  // here is my parent component that holds all the other child components.
   render() {
 
     return (
