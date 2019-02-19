@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import "./Login.css"
 import { Link } from "react-router-dom"
 import brain from "../loginAssets/brain.png"
-
+import UsersManager from "../../modules/UsersManager"
+import IdeaManager from "../../modules/IdeaManager"
 
 
 export default class Login extends Component {
@@ -11,6 +12,30 @@ export default class Login extends Component {
         email: "",
         username: ""
     }
+// // trying to update the props.
+//     componentDidUpdate(prevProps) {
+
+//         if (this.props.username !== prevProps.username) {
+//             this.updateComponent(this.props.username);
+//         }
+
+
+// }
+
+
+// updateComponent = () => {
+
+//     UsersManager.getAll().then(allUsers => {
+//         this.setState({ users: allUsers });
+//         console.log(allUsers)
+//     })
+//     IdeaManager.getAll()
+//         .then(allIdea => {
+//             this.setState({
+//                 idea: allIdea
+//             })
+//         })
+// }
 
     // Update state whenever an input field is edited
     handleFieldChange = (evt) => {
@@ -33,34 +58,51 @@ export default class Login extends Component {
             this.state.username)
 
         let currentUser = sessionStorage.getItem("username")
+        //????
+        console.log(this.props.users)
+        console.log(this.state)
         let authenticated = this.props.users.find(user =>
-            user.name === this.state.username)
+            user.name === this.state.username && user.email === this.state.email )
             console.log(currentUser)
             console.log(this.props.users)
 
             console.log(authenticated)
-
-            sessionStorage.setItem(
-                "userId",
-                authenticated.id)
+// authenticated is not getting the updated props. thats why is throwing an arror.and it's also undefined.
+            // sessionStorage.setItem(
+            //     "userId",
+            //     authenticated.id)
 
             if (authenticated === undefined){
-                alert("Whoops! We we couldn't find your account. Please re-renter a valid username and email or sign up below!")
+                alert("Please re-renter a valid username and email or sign up below!")
                 
-                // this.props.history.push("/register")
+                this.props.history.push("/register")
             } else {
-                // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
-                this.props.updateComponent()
-                // Taking user to news page
-                this.props.history.push("/idea")
-            }
+                sessionStorage.setItem(
+                    "userId",
+                    authenticated.id)
+
+                          // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
+                         this.props.updateComponent()
+                         // Taking user to idea page
+                         this.props.history.push("/idea")
+                        
+                    }
+
+
+            
     }
+   componentDidMount() {
+       if(sessionStorage.getItem("username") !== null){
+           sessionStorage.removeItem("username")
+           sessionStorage.removeItem("userId")
+           sessionStorage.removeItem("credentials")
+       }
+   }
 
-    render() {
+    
+    render()
+    {
 
-        // if (this.username.length === 0) {
-        //     return null
-        // }
 
         return (
             <section className="login">

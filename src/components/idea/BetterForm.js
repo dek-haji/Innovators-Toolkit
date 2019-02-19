@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import IdeaManager from "../modules/IdeaManager"
-import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
+import { Card, CardColumns, CardText } from "reactstrap"
 import "./Idea.css"
 
 
