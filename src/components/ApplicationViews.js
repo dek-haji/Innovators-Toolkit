@@ -48,7 +48,8 @@ export default class ApplicationViews extends Component {
           
         const newState = {}
 //updating the new state.
-        fetch("http://localhost:5002/idea")
+let sessionId = sessionStorage.getItem("userId")
+        fetch(`http://localhost:5002/idea?userId=${sessionId}`)
             .then(r => r.json())
             .then(r => {
                 console.log(r)
@@ -65,7 +66,7 @@ export default class ApplicationViews extends Component {
     addUser = (user) => SignUpManager.post(user)
         .then(() => UsersManager.getAll())
         .then(Allusers => this.setState({
-            users: Allusers             //added this three line of codes today.
+            users: Allusers             //added this three line of codes today to set the new user.
         }))
 
     addIdea = (idea) => IdeaManager.post(idea)

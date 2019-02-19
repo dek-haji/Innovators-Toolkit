@@ -4,7 +4,8 @@ export default {
     return fetch(`${remoteURL}/idea/${id}`).then(e => e.json());
   },
   getAll() {
-    return fetch(`${remoteURL}/idea`).then(e => e.json());
+    let sessionId = sessionStorage.getItem("userId")
+    return fetch(`${remoteURL}/idea?userId=${sessionId}`).then(e => e.json());
   },
   post(idea) {
     return fetch(`${remoteURL}/idea/`, {

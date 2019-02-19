@@ -17,6 +17,18 @@
       "categoryId": 1,
       "userId": 4,
       "id": 3
+    },
+    {
+      "idea": "testssss",
+      "categoryId": 1,
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "idea": "loololo",
+      "categoryId": 1,
+      "userId": 2,
+      "id": 5
     }
   ],
   "categories": [
@@ -43,6 +55,12 @@
       "name": "test",
       "email": "test@email.com",
       "id": 2
+    },
+    {
+      "name": "emily",
+      "email": "emily@email.com",
+      "id": 3
     }
+   
   ]
 }
