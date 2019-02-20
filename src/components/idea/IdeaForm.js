@@ -4,7 +4,7 @@ import { Clock, Box } from "grommet";
 import "./Idea.css"
 
 export default class IdeaForm extends Component {
-    // Set initial state
+    // Set initial state and let categoryId be 1.
     state = {
         idea: "",
         userId: "",

@@ -81,8 +81,9 @@ export default class Login extends Component {
 
 
         return (
+             //The onSubmit handler of the form is used to execute the class method
             <section className="login">
-                <form className="registerContainer" onSubmit={this.handleLogin}>
+                <form className="registerContainer" onSubmit={this.handleLogin}>   
                 <img src={brain} className="acornIcon" alt="acornIcon" height="60" width="60"></img>
                     <h2>Please sign in</h2>
                     <label htmlFor="inputUsername">
@@ -95,7 +96,7 @@ export default class Login extends Component {
                     <label htmlFor="inputEmail">
                     </label>
                     <br></br>
-                    <input onChange={this.handleFieldChange} type="email"
+                    <input onChange={this.handleFieldChange} type="email" //onchange is a listener
                         id="email"
                         placeholder="Email"
                         required />

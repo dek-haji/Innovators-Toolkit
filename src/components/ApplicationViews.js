@@ -15,6 +15,7 @@ import Idea from "./idea/Idea"
 
 export default class ApplicationViews extends Component {
     isAuthenticated = () => sessionStorage.getItem("username") !== null
+    //if the username is not empty 
     state = {
         okIdea: [],
         betterIdea: [],
@@ -155,7 +156,7 @@ let sessionId = sessionStorage.getItem("userId")
 
             }))
             .then(() => IdeaManager.getBetterIdeas())
-            .then(idea => this.setState({
+            .then(idea => this.setState({   //When the data is fetched successfully, it will be stored in the local state with React’s this.setState()
                 betterIdea: idea
             }))
     }
@@ -169,7 +170,7 @@ let sessionId = sessionStorage.getItem("userId")
         })
         IdeaManager.getAll()
             .then(allIdea => {
-                this.setState({
+                this.setState({     //the method setstate stores the result in the local component state by using React 
                     idea: allIdea
                 })
             })

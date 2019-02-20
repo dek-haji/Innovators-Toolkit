@@ -8,12 +8,13 @@ export default {
     return fetch(`${remoteURL}/idea?userId=${sessionId}`).then(e => e.json());
   },
   post(idea) {
-    return fetch(`${remoteURL}/idea/`, {
+    let sessionId = sessionStorage.getItem("userId")  //sorting the userId
+    return fetch(`${remoteURL}/idea?userId=${sessionId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(idea)
+      body: JSON.stringify(idea)  //The JSON.stringify() method converts a JavaScript object or value to a JSON string
     }).then(data => data.json());
   },
 
@@ -30,7 +31,7 @@ export default {
 
   changeComponent(id, idea) {
     return fetch(`http://localhost:5002/idea/${id}`, {
-      method: "PATCH",
+      method: "PATCH",  // i used  PATCH, to modify an existing HTTP resource. instead of PUT
       headers: {
         "Content-Type": "application/json"
       },

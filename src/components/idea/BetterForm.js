@@ -30,25 +30,6 @@ export default class BetterForm extends Component {
         // .then(() => this.props.history.push("/idea"))
     }
 
-    // componentDidMount() {
-    //     console.log(this.state.idea.id)
-    //     IdeaManager.get(this.state.idea.id)
-        
-    //         .then(idea => {
-    //             this.setState({
-    //                 idea: idea.idea,
-    //                 userId: idea.userId,
-    //                 categoryId: idea.categoryId
-    //             })
-    //         })
-    // }
-    // componentDidUpdate(prevProps) {
-
-    //     if (this.props.categoryId !== prevProps.categoryId) {
-    //         this.fetchData(this.props.categoryId);
-    //     }
-
-
 
 
     
