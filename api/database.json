@@ -1,5 +1,72 @@
 {
-  "idea": [],
+  "idea": [
+    {
+      "idea": "test ",
+      "categoryId": 1,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "idea": "test",
+      "categoryId": 2,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "idea": "test1",
+      "categoryId": 3,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "idea": "test3",
+      "categoryId": 3,
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "idea": "test test test",
+      "categoryId": 3,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "idea": "test2",
+      "categoryId": 2,
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "idea": "test2",
+      "categoryId": 1,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "idea": "test3",
+      "categoryId": 2,
+      "userId": 3,
+      "id": 8
+    },
+    {
+      "idea": "test3",
+      "categoryId": 2,
+      "userId": 3,
+      "id": 9
+    },
+    {
+      "idea": "sdfds",
+      "categoryId": 3,
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "idea": "vbdvb",
+      "categoryId": 1,
+      "userId": 3,
+      "id": 11
+    }
+  ],
   "categories": [
     {
       "id": 1,
@@ -16,112 +83,19 @@
   ],
   "users": [
     {
-      "name": "test",
-      "email": "test@email.com",
+      "name": "dek",
+      "email": "dek@email.com",
       "id": 1
     },
     {
-      "name": "dek.haji",
-      "email": "deeeqhaji@gmail.com",
+      "name": "test",
+      "email": "test@email.com",
       "id": 2
-    },
-    {
-      "name": "ali",
-      "email": "ali@email.com",
-      "id": 3
     },
     {
       "name": "test1",
       "email": "test1@email.com",
-      "id": 4
-    },
-    {
-      "name": "Doly",
-      "email": "dolly@email.com",
-      "id": 5
-    },
-    {
-      "name": "dek.haji",
-      "email": "deeeqhaji@gmail.com",
-      "id": 7
-    },
-    {
-      "name": "deeq",
-      "email": "deeeqhaji@gmail.com",
-      "id": 8
-    },
-    {
-      "name": "test3",
-      "email": "test3@email.com",
-      "id": 9
-    },
-    {
-      "name": "onetwo@email.com",
-      "email": "one@email.com",
-      "id": 10
-    },
-    {
-      "name": "register",
-      "email": "register@email.com",
-      "id": 11
-    },
-    {
-      "name": "create1",
-      "email": "create1@email.com",
-      "id": 12
-    },
-    {
-      "name": "good",
-      "email": "good1@email.com",
-      "id": 13
-    },
-    {
-      "name": "hithere",
-      "email": "hithere@email.com",
-      "id": 14
-    },
-    {
-      "name": "1234",
-      "email": "1234@email.com",
-      "id": 16
-    },
-    {
-      "name": "signup",
-      "email": "signup@email.com",
-      "id": 20
-    },
-    {
-      "name": "1122",
-      "email": "1122@email.com",
-      "id": 23
-    },
-    {
-      "id": 24
-    },
-    {
-      "name": "112233",
-      "email": "112233",
-      "id": 25
-    },
-    {
-      "name": "leah",
-      "email": "leah@email.com",
-      "id": 27
-    },
-    {
-      "name": "leah1",
-      "email": "leah1@email.com",
-      "id": 28
-    },
-    {
-      "name": "",
-      "email": "",
-      "id": 29
-    },
-    {
-      "name": "leah2",
-      "email": "leah2@email.com",
-      "id": 30
+      "id": 3
     }
   ]
 }

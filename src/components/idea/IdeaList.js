@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
-import { Card, CardColumns, CardText, CardBody, Button, } from "reactstrap"
+import { Card, CardText, CardBody } from "reactstrap"
+
 import "./Idea.css"
 import IdeaManager from "../modules/IdeaManager"
 
@@ -19,7 +20,7 @@ export default class IdeaList extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
-    
+
 
     updateExistingComponent = (evt) => {
         evt.preventDefault()
@@ -34,21 +35,11 @@ export default class IdeaList extends Component {
         // .then(() => this.props.history.push("/idea"))
     }
 
-    // componentDidMount() {
-    //     IdeaManager.get(this.state.idea.id)
-    //         .then(idea => {
-    //             this.setState({
-    //                 idea: idea.idea,
-    //                 userId: idea.userId,
-    //                 categoryId: idea.categoryId
-    //             })
-    //         })
-    // }
     componentDidUpdate(prevProps) {
 
         if (this.props.okIdea !== prevProps.okIdea) {
-
-            IdeaManager.getOkIdeas(this.props.okIdea)
+        console.log(this.props.sessionId)
+            IdeaManager.getOkIdeas(this.props.sessionId)
                 .then(newIdea =>
                     this.setState({
                         idea: newIdea
@@ -58,38 +49,39 @@ export default class IdeaList extends Component {
     }
 
     render() {
-        console.log(this.props)
+        console.log(this.props.okIdea)
         return (
-           
 
-                <Card body outline color="secondary" className="ideas12" >
-                    <h2>Free writting</h2>
-                    {
-                        this.props.okIdea.map(idea =>
-                            <Card key={idea.id} className="card">
 
-                                <CardBody body outline color="primary" className="card-body">
+            <Card body outline color="secondary" className="ideas12" >
+                <h2>Free writting</h2>
+                {
+                    this.props.okIdea.map(idea =>
+                        <Card key={idea.id} className="card">
 
-                                    <CardText>{idea.idea} </CardText>
+                            <CardBody className="card-body">
 
-                                   
-                                        <Button
-                                            onClick={() => this.props.deleteOkIdea(idea.id)}
-                                            className="card-link">Delete</Button>
+                                <CardText>{idea.idea} </CardText>
 
-                                    
-                                </CardBody>
+
                                 <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
-                                <Button id={idea.id}
-                                    onClick={this.updateExistingComponent}
-                                    className="card-link">Forward</Button>
+                                <button 
+                                   
+                                    onClick={() => this.props.deleteOkIdea(idea.id)}
+                                    className="card-link">Delete</button>
 
 
-                            </Card>
-                        )
-                    }
-                </Card>
-            
+                            <button id={idea.id}
+                                onClick={this.updateExistingComponent}
+                                className="card-link">Forward</button>
+
+                                </CardBody>
+
+                        </Card>
+                    )
+                }
+            </Card>
+
         )
     }
 }

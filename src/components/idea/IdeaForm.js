@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import { Button, Input } from "reactstrap"
+import { Clock, Box } from "grommet";
 import "./Idea.css"
 
 export default class IdeaForm extends Component {
-    // Set initial state
+    // Set initial state and let categoryId be 1.
     state = {
         idea: "",
         userId: "",
@@ -11,6 +12,7 @@ export default class IdeaForm extends Component {
     
 
     }
+    // clear the input field whenever we submit.
     clearField = ()=> {
         
         this.setState({idea: ""})
@@ -22,6 +24,7 @@ export default class IdeaForm extends Component {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
+       
     }
     
    
@@ -52,7 +55,15 @@ export default class IdeaForm extends Component {
         return (
            
 
-                <form class="ideaForm1" >
+                <Box
+                gridArea="header"
+                direction="column"
+                align="start"
+                
+                pad={{ horizontal: "medium", vertical: "small" }}
+                background="dark-3"
+                className="ideaForm1" >
+              
                    
                         <label htmlFor="IdeaName">What do you have in your mind?</label>
                         <Input type="textarea" required
@@ -63,10 +74,11 @@ export default class IdeaForm extends Component {
                             id="idea"
                             placeholder="anything"
                         />
-                    
+                        <Clock type="digital" run = "forward" size= "xlarge"  margin= "small" hourLimit= "12" 
+                        alignSelf = "center"/>
 
                     <Button type="submit"  onClick={this.constructNewIdea} color="success">Add Idea</Button>
-                </form>
+                </Box>
 
 
 

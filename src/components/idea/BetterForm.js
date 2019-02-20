@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import IdeaManager from "../modules/IdeaManager"
-import { Card, CardColumns, CardText, CardBody, Button, Input } from "reactstrap"
+import { Card, CardColumns, CardText } from "reactstrap"
 import "./Idea.css"
 
 
@@ -30,25 +30,6 @@ export default class BetterForm extends Component {
         // .then(() => this.props.history.push("/idea"))
     }
 
-    // componentDidMount() {
-    //     console.log(this.state.idea.id)
-    //     IdeaManager.get(this.state.idea.id)
-        
-    //         .then(idea => {
-    //             this.setState({
-    //                 idea: idea.idea,
-    //                 userId: idea.userId,
-    //                 categoryId: idea.categoryId
-    //             })
-    //         })
-    // }
-    // componentDidUpdate(prevProps) {
-
-    //     if (this.props.categoryId !== prevProps.categoryId) {
-    //         this.fetchData(this.props.categoryId);
-    //     }
-
-
 
 
     
@@ -64,7 +45,7 @@ export default class BetterForm extends Component {
                     {
                         this.props.betterIdea.map(idea =>
                             <Card key={idea.id} className="card" >
-                                <CardBody body outline color="primary" className="card-body">
+                              
 
                                     <CardText >{idea.idea} </CardText>
 
@@ -76,7 +57,7 @@ export default class BetterForm extends Component {
                                             onClick={this.updateExistingComponent}
                                             className="card-link">Forward</button>
                                     
-                                </CardBody>
+                                
                                
 
                             </Card>

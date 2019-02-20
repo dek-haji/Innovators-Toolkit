@@ -14,40 +14,44 @@ import Idea from "./idea/Idea"
 
 
 export default class ApplicationViews extends Component {
+    isAuthenticated = () => sessionStorage.getItem("username") !== null
+    //if the username is not empty 
     state = {
         okIdea: [],
         betterIdea: [],
         bestIdea: [],
-        users: []
-
+        users: [],
+        sessionId: sessionStorage.getItem("userId")
 
     };
-    isAuthenticated = () => sessionStorage.getItem("username") !== null
     componentDidMount() {
-
-        IdeaManager.getOkIdeas()
+        let sessionId = sessionStorage.getItem("userId")
+        IdeaManager.getOkIdeas(sessionId)
             .then(okIdeas => {
                 this.setState({
                     okIdea: okIdeas
                 })
             })
 
-        IdeaManager.getBetterIdeas()
+        IdeaManager.getBetterIdeas(sessionId)
             .then(better => {
                 this.setState({
                     betterIdea: better
                 })
             })
 
-        IdeaManager.getBestIdeas()
+        IdeaManager.getBestIdeas(sessionId)
             .then(best => {
                 this.setState({
                     bestIdea: best
                 })
             })
+          
         const newState = {}
+//updating the new state.
 
-        fetch("http://localhost:5002/idea")
+console.log(sessionId)
+        fetch(`http://localhost:5002/idea?userId=${sessionId}`)
             .then(r => r.json())
             .then(r => {
                 console.log(r)
@@ -56,22 +60,26 @@ export default class ApplicationViews extends Component {
                 this.setState(newState)
 
             })
-        this.updateComponent()
+        this.updateComponent() // i callled this function to load the users before i pass it to the login
         // this.addUser()
-        // Hannah: commented out to keep new user from being added on
-
+        // commented out to keep new user from being added on
 
     }
+    addUser = (user) => SignUpManager.post(user)
+        .then(() => UsersManager.getAll())
+        .then(Allusers => this.setState({
+            users: Allusers             //added this three line of codes today to set the new user.
+        }))
 
     addIdea = (idea) => IdeaManager.post(idea)
-        .then(() => IdeaManager.getOkIdeas())
+        .then(() => IdeaManager.getOkIdeas(this.state.sessionId))
         .then(AllIdea => this.setState({
 
             okIdea: AllIdea
 
         })
         );
-    addUser = (user) => SignUpManager.post(user)
+   
 
     deleteOkIdea = id => {
         return fetch(`http://localhost:5002/idea/${id}`, {
@@ -114,7 +122,7 @@ export default class ApplicationViews extends Component {
 
     editIdea = (id, idea) => {
         return IdeaManager.updateIdea(id, idea)
-            .then(() => IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getOkIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 okIdea: idea
 
@@ -125,7 +133,7 @@ export default class ApplicationViews extends Component {
 
     forwardComponent1 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
-            .then(() => IdeaManager.getBetterIdeas())
+            .then(() => IdeaManager.getBetterIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 betterIdea: idea
 
@@ -133,7 +141,7 @@ export default class ApplicationViews extends Component {
 
 
             }))
-            .then(() => IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getOkIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 okIdea: idea
             }))
@@ -141,26 +149,29 @@ export default class ApplicationViews extends Component {
     }
     forwardComponent2 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
-            .then(() => IdeaManager.getBestIdeas())
+            .then(() => IdeaManager.getBestIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 bestIdea: idea
 
 
 
             }))
-            .then(() => IdeaManager.getBetterIdeas())
-            .then(idea => this.setState({
+            .then(() => IdeaManager.getBetterIdeas(this.state.sessionId))
+            .then(idea => this.setState({   //When the data is fetched successfully, it will be stored in the local state with React’s this.setState()
                 betterIdea: idea
             }))
     }
+
+    //?????
     updateComponent = () => {
 
         UsersManager.getAll().then(allUsers => {
             this.setState({ users: allUsers });
+            console.log(allUsers)
         })
-        IdeaManager.getAll()
+        IdeaManager.getAll(this.state.sessionId)
             .then(allIdea => {
-                this.setState({
+                this.setState({     //the method setstate stores the result in the local component state by using React 
                     idea: allIdea
                 })
             })
@@ -182,6 +193,7 @@ export default class ApplicationViews extends Component {
                 <Route
                     exact
                     path="/idea" render={props => {
+                        if (this.isAuthenticated()) {   // added that line so u we cant change the route manually.   
                         return <Idea {...props}
                             okIdea={this.state.okIdea}
                             addIdea={this.addIdea}
@@ -192,46 +204,24 @@ export default class ApplicationViews extends Component {
                             bestIdea={this.state.bestIdea}
                             forwardComponent1={this.forwardComponent1}
                             forwardComponent2={this.forwardComponent2}
+                            sessionId= {this.state.sessionId}
                         />
-                    }}
+                    } else{
+                        return <Redirect to= "/login" />;
+                    }
+                }}
                 />
 
                 <Route path="/idea/:ideaId(\d+)/edit" render={props => {
-                    if (this.isAuthenticated()) {
                         return <IdeaEditForm {...props}
                             editIdea={this.editIdea}
                             idea={this.state.idea}
 
                         />
-                    } else {
-                        return <Redirect to="/login" />
-                    }
+                    
+                    
                 }} />
-                {/* <Route exact path="/idea" render={(props) => {
-                    if (this.isAuthenticated()) {
-                        return (
-                            <IdeaList
-                                deleteIdea={this.deleteIdea}
-                                idea={this.state.idea}
-                            
-                            />
-                            
-                        );
-
-                    }
-
-                }} /> */}
-                {/* <Route path="/idea/:ideaId(\d+)/edit" render={props => {
-                    if (this.isAuthenticated()) {
-                        return <Forward {...props}
-                        editIdea={this.editIdea} 
-                        idea={this.state.idea}
-                            />
-                    } else {
-                        return <Redirect to="/login" />
-                    }
-                }} /> */}
-
+                
             </React.Fragment>
         )
     }

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import "./Login.css"
-import { Link } from "react-router-dom"
-import SignUpManager from '../../modules/SignUpManager'
+
 
 
 
@@ -13,12 +12,12 @@ export default class Register extends Component {
         name: "",
         email: ""
         // id:""
-        // Hannah commented out id: ""
+        //  commented out id: ""
     }
 
     // Update state whenever an input field is edited
     handleFieldChange = (evt) => {
-        evt.preventDefault(); // Hannah added evt.preventDefault();
+        evt.preventDefault(); // added evt.preventDefault();
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
@@ -30,15 +29,15 @@ export default class Register extends Component {
         e.preventDefault()
 
         /*
-            For now, just store the email and password that
+            For now, just store the email and username that
             the customer enters into local storage.
         */
         sessionStorage.setItem(
             "credentials",
-            JSON.stringify({
+            JSON.stringify({        //The JSON.stringify() method converts a JavaScript object or value to a JSON string, 
                 name: this.state.name,
                 email: this.state.email,
-                id: this.state.id
+                // id: this.state.id
             })
         )
     }

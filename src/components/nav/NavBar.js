@@ -16,7 +16,7 @@ class NavBar extends Component {
                     </li>
                    
                     <li className="nav-item">
-                        <Link className="nav-link" to="/log-out">/ Log out</Link>
+                        <Link className="nav-link" to="/login">/ Log out</Link>
                     </li>
                 </ul>
             </Navbar>
