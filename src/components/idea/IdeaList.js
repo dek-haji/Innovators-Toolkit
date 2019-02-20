@@ -38,8 +38,8 @@ export default class IdeaList extends Component {
     componentDidUpdate(prevProps) {
 
         if (this.props.okIdea !== prevProps.okIdea) {
-
-            IdeaManager.getOkIdeas(this.props.okIdea)
+        console.log(this.props.sessionId)
+            IdeaManager.getOkIdeas(this.props.sessionId)
                 .then(newIdea =>
                     this.setState({
                         idea: newIdea
@@ -49,7 +49,7 @@ export default class IdeaList extends Component {
     }
 
     render() {
-        console.log(this.props)
+        console.log(this.props.okIdea)
         return (
 
 

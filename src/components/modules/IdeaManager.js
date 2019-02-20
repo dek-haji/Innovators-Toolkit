@@ -3,18 +3,17 @@ export default {
   get(id) {
     return fetch(`${remoteURL}/idea/${id}`).then(e => e.json());
   },
-  getAll() {
-    let sessionId = sessionStorage.getItem("userId")
+  getAll(sessionId) {
+    // let sessionId = sessionStorage.getItem("userId")
     return fetch(`${remoteURL}/idea?userId=${sessionId}`).then(e => e.json());
   },
   post(idea) {
-    let sessionId = sessionStorage.getItem("userId")  //sorting the userId
-    return fetch(`${remoteURL}/idea?userId=${sessionId}`, {
+    return fetch(`${remoteURL}/idea/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(idea)  //The JSON.stringify() method converts a JavaScript object or value to a JSON string
+      body: JSON.stringify(idea)
     }).then(data => data.json());
   },
 
@@ -31,7 +30,7 @@ export default {
 
   changeComponent(id, idea) {
     return fetch(`http://localhost:5002/idea/${id}`, {
-      method: "PATCH",  // i used  PATCH, to modify an existing HTTP resource. instead of PUT
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
@@ -40,14 +39,14 @@ export default {
   },
 
 
-  getOkIdeas() {
-    return fetch(`${remoteURL}/idea?categoryId=1`).then(e => e.json());
+  getOkIdeas(sessionId) {
+    return fetch(`${remoteURL}/idea?categoryId=1&userId=${sessionId}`).then(e => e.json());
   },
-  getBetterIdeas() {
-    return fetch(`${remoteURL}/idea?categoryId=2`).then(e => e.json());
+  getBetterIdeas(sessionId) {
+    return fetch(`${remoteURL}/idea?categoryId=2&userId=${sessionId}`).then(e => e.json());
   },
-  getBestIdeas() {
-    return fetch(`${remoteURL}/idea?categoryId=3`).then(e => e.json());
+  getBestIdeas(sessionId) {
+    return fetch(`${remoteURL}/idea?categoryId=3&userId=${sessionId}`).then(e => e.json());
   }
 
 }

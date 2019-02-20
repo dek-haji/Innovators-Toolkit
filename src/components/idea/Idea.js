@@ -21,7 +21,8 @@ export class Idea extends Component {
 
         <IdeaList okIdea={this.props.okIdea}
           deleteOkIdea={this.props.deleteOkIdea}
-          forwardComponent1={this.props.forwardComponent1} />
+          forwardComponent1={this.props.forwardComponent1} 
+          sessionId= {this.props.sessionId}/>
         <BetterForm betterIdea={this.props.betterIdea}
           deleteBetterIdea={this.props.deleteBetterIdea}
           forwardComponent2={this.props.forwardComponent2} />

@@ -20,27 +20,27 @@ export default class ApplicationViews extends Component {
         okIdea: [],
         betterIdea: [],
         bestIdea: [],
-        users: []
-
+        users: [],
+        sessionId: sessionStorage.getItem("userId")
 
     };
     componentDidMount() {
-
-        IdeaManager.getOkIdeas()
+        let sessionId = sessionStorage.getItem("userId")
+        IdeaManager.getOkIdeas(sessionId)
             .then(okIdeas => {
                 this.setState({
                     okIdea: okIdeas
                 })
             })
 
-        IdeaManager.getBetterIdeas()
+        IdeaManager.getBetterIdeas(sessionId)
             .then(better => {
                 this.setState({
                     betterIdea: better
                 })
             })
 
-        IdeaManager.getBestIdeas()
+        IdeaManager.getBestIdeas(sessionId)
             .then(best => {
                 this.setState({
                     bestIdea: best
@@ -49,7 +49,8 @@ export default class ApplicationViews extends Component {
           
         const newState = {}
 //updating the new state.
-let sessionId = sessionStorage.getItem("userId")
+
+console.log(sessionId)
         fetch(`http://localhost:5002/idea?userId=${sessionId}`)
             .then(r => r.json())
             .then(r => {
@@ -59,7 +60,7 @@ let sessionId = sessionStorage.getItem("userId")
                 this.setState(newState)
 
             })
-        // this.updateComponent()
+        this.updateComponent() // i callled this function to load the users before i pass it to the login
         // this.addUser()
         // commented out to keep new user from being added on
 
@@ -71,7 +72,7 @@ let sessionId = sessionStorage.getItem("userId")
         }))
 
     addIdea = (idea) => IdeaManager.post(idea)
-        .then(() => IdeaManager.getOkIdeas())
+        .then(() => IdeaManager.getOkIdeas(this.state.sessionId))
         .then(AllIdea => this.setState({
 
             okIdea: AllIdea
@@ -121,7 +122,7 @@ let sessionId = sessionStorage.getItem("userId")
 
     editIdea = (id, idea) => {
         return IdeaManager.updateIdea(id, idea)
-            .then(() => IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getOkIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 okIdea: idea
 
@@ -132,7 +133,7 @@ let sessionId = sessionStorage.getItem("userId")
 
     forwardComponent1 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
-            .then(() => IdeaManager.getBetterIdeas())
+            .then(() => IdeaManager.getBetterIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 betterIdea: idea
 
@@ -140,7 +141,7 @@ let sessionId = sessionStorage.getItem("userId")
 
 
             }))
-            .then(() => IdeaManager.getOkIdeas())
+            .then(() => IdeaManager.getOkIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 okIdea: idea
             }))
@@ -148,14 +149,14 @@ let sessionId = sessionStorage.getItem("userId")
     }
     forwardComponent2 = (id, idea) => {
         return IdeaManager.changeComponent(id, idea)
-            .then(() => IdeaManager.getBestIdeas())
+            .then(() => IdeaManager.getBestIdeas(this.state.sessionId))
             .then(idea => this.setState({
                 bestIdea: idea
 
 
 
             }))
-            .then(() => IdeaManager.getBetterIdeas())
+            .then(() => IdeaManager.getBetterIdeas(this.state.sessionId))
             .then(idea => this.setState({   //When the data is fetched successfully, it will be stored in the local state with React’s this.setState()
                 betterIdea: idea
             }))
@@ -168,7 +169,7 @@ let sessionId = sessionStorage.getItem("userId")
             this.setState({ users: allUsers });
             console.log(allUsers)
         })
-        IdeaManager.getAll()
+        IdeaManager.getAll(this.state.sessionId)
             .then(allIdea => {
                 this.setState({     //the method setstate stores the result in the local component state by using React 
                     idea: allIdea
@@ -203,6 +204,7 @@ let sessionId = sessionStorage.getItem("userId")
                             bestIdea={this.state.bestIdea}
                             forwardComponent1={this.forwardComponent1}
                             forwardComponent2={this.forwardComponent2}
+                            sessionId= {this.state.sessionId}
                         />
                     } else{
                         return <Redirect to= "/login" />;

@@ -1,28 +1,70 @@
 {
   "idea": [
     {
-      "idea": "test1",
-      "categoryId": 2,
-      "userId": 4,
+      "idea": "test ",
+      "categoryId": 1,
+      "userId": 1,
       "id": 1
+    },
+    {
+      "idea": "test",
+      "categoryId": 2,
+      "userId": 1,
+      "id": 2
     },
     {
       "idea": "test1",
       "categoryId": 3,
-      "userId": 4,
-      "id": 2
-    },
-    {
-      "idea": "test",
-      "categoryId": 1,
-      "userId": 2,
+      "userId": 1,
       "id": 3
     },
     {
-      "idea": "lloolll",
-      "categoryId": 1,
-      "userId": 5,
+      "idea": "test3",
+      "categoryId": 3,
+      "userId": 3,
       "id": 4
+    },
+    {
+      "idea": "test test test",
+      "categoryId": 3,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "idea": "test2",
+      "categoryId": 2,
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "idea": "test2",
+      "categoryId": 1,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "idea": "test3",
+      "categoryId": 2,
+      "userId": 3,
+      "id": 8
+    },
+    {
+      "idea": "test3",
+      "categoryId": 2,
+      "userId": 3,
+      "id": 9
+    },
+    {
+      "idea": "sdfds",
+      "categoryId": 3,
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "idea": "vbdvb",
+      "categoryId": 1,
+      "userId": 3,
+      "id": 11
     }
   ],
   "categories": [
@@ -51,19 +93,9 @@
       "id": 2
     },
     {
-      "name": "emily",
-      "email": "emily@email.com",
+      "name": "test1",
+      "email": "test1@email.com",
       "id": 3
-    },
-    {
-      "name": "test",
-      "email": "test@email.com",
-      "id": 4
-    },
-    {
-      "name": "haji",
-      "email": "haji@email.com",
-      "id": 5
     }
   ]
 }

@@ -35,8 +35,8 @@ export default class Login extends Component {
         //we get the current user from the session storage.
         console.log(this.props.users)
         console.log(this.state)
-        let authenticated = this.props.users.find(user =>
-            user.name === this.state.username && user.email === this.state.email )
+        let authenticated = this.props.users.find(user =>   //The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+            user.name === this.state.username )
             console.log(currentUser)
             console.log(this.props.users)
 
