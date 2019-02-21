@@ -1,34 +1,28 @@
 {
   "idea": [
     {
-      "idea": "sfsf",
+      "idea": "rtujj",
+      "categoryId": 3,
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "idea": "erwertewtwe",
       "categoryId": 2,
-      "userId": 3,
-      "id": 7
+      "userId": 2,
+      "id": 20
     },
     {
-      "idea": "dsfds",
-      "categoryId": 1,
-      "userId": 3,
-      "id": 8
-    },
-    {
-      "idea": "dsdsd",
+      "idea": "werwerwer",
       "categoryId": 3,
       "userId": 2,
-      "id": 13
+      "id": 21
     },
     {
-      "idea": "dsd",
-      "categoryId": 2,
-      "userId": 2,
-      "id": 14
-    },
-    {
-      "idea": "dsd",
+      "idea": "werewrewrew",
       "categoryId": 1,
       "userId": 2,
-      "id": 15
+      "id": 22
     }
   ],
   "categories": [

@@ -3,9 +3,10 @@ export default {
   get(id) {
     return fetch(`${remoteURL}/idea/${id}`).then(e => e.json());
   },
-  getAll(sessionId) {
-    // let sessionId = sessionStorage.getItem("userId")
-    return fetch(`${remoteURL}/idea?userId=${sessionId}`).then(e => e.json());
+  getAll() {
+    let sessionId = sessionStorage.getItem("userId")
+    let sessionNumber = Number(sessionId)
+    return fetch(`${remoteURL}/idea?userId=${sessionNumber}`).then(e => e.json());
   },
   post(idea) {
     return fetch(`${remoteURL}/idea/`, {

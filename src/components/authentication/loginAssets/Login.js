@@ -55,6 +55,8 @@ console.log(this.state.username)
                     "userId",
                     authenticated.id)
 
+                    console.log(sessionStorage.getItem("userId"))
+
                           // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
                          this.props.updateComponent()
                          // Taking user to idea page

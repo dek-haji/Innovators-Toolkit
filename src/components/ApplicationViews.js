@@ -21,6 +21,7 @@ export default class ApplicationViews extends Component {
         betterIdea: [],
         bestIdea: [],
         users: [],
+        idea: [],
         sessionId: sessionStorage.getItem("userId")
 
     };
@@ -171,11 +172,27 @@ export default class ApplicationViews extends Component {
         UsersManager.getAll(this.state.sessionId).then(allUsers => {
             this.setState({ users: allUsers });
             console.log(allUsers)
+            console.log(currentUserId)
         })
-        IdeaManager.getAll(this.state.sessionId)
-            .then(allIdea => {
-                this.setState({     //the method setstate stores the result in the local component state by using React 
-                    idea: allIdea
+        // let sessionId = sessionStorage.getItem("userId")
+        IdeaManager.getOkIdeas(sessionId)
+            .then(okIdeas => {
+                this.setState({
+                    okIdea: okIdeas
+                })
+            })
+
+        IdeaManager.getBetterIdeas(sessionId)
+            .then(better => {
+                this.setState({
+                    betterIdea: better
+                })
+            })
+
+        IdeaManager.getBestIdeas(sessionId)
+            .then(best => {
+                this.setState({
+                    bestIdea: best
                 })
             })
     }
