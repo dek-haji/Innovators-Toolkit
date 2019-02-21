@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import NavBar from "./nav/NavBar"
+
 
 
 import "./Main.css"
@@ -8,11 +8,13 @@ import ApplicationViews from "./ApplicationViews";
 
 
 class Main extends Component {
+  
     render() {
         return (
             <React.Fragment>
-                <NavBar />
-              <ApplicationViews />
+
+                <ApplicationViews />
+
             </React.Fragment>
         )
     }
