@@ -47,25 +47,25 @@ export default class ApplicationViews extends Component {
                 })
             })
           
-        const newState = {}
-//updating the new state.
-
-console.log(sessionId)
-        fetch(`http://localhost:5002/idea?userId=${sessionId}`)
-            .then(r => r.json())
-            .then(r => {
-                console.log(r)
-                newState.idea = r
-                console.log(newState)
-                this.setState(newState)
-
-            })
-        this.updateComponent() // i callled this function to load the users before i pass it to the login
-        // this.addUser()
-        // commented out to keep new user from being added on
-
-    }
-    addUser = (user) => SignUpManager.post(user)
+            this.updateComponent() // i callled this function to load the users before i pass it to the login
+            // this.addUser()
+            // commented out to keep new user from being added on
+            
+            const newState = {}
+    //updating the new state.
+    
+    console.log(sessionId)
+            fetch(`http://localhost:5002/idea?userId=${sessionId}`)
+                .then(r => r.json())
+                .then(r => {
+                    console.log(r)
+                    newState.idea = r
+                    console.log(newState)
+                    this.setState(newState)
+    
+                })
+        }
+        addUser = (user) => SignUpManager.post(user)
         .then(() => UsersManager.getAll())
         .then(Allusers => this.setState({
             users: Allusers             //added this three line of codes today to set the new user.
@@ -80,13 +80,14 @@ console.log(sessionId)
         })
         );
    
-
+//??
     deleteOkIdea = id => {
+        let sessionId = sessionStorage.getItem("userId")
         return fetch(`http://localhost:5002/idea/${id}`, {
             method: "DELETE"
         })
             .then(e => e.json())
-            .then(() => fetch(`http://localhost:5002/idea?categoryId=1`))
+            .then(() => fetch(`http://localhost:5002/idea?categoryId=1&${sessionId}`))
             .then(e => e.json())
             .then(idea => this.setState({
                 okIdea: idea,
@@ -164,8 +165,10 @@ console.log(sessionId)
 
     //?????
     updateComponent = () => {
-
-        UsersManager.getAll().then(allUsers => {
+        const sessionId = sessionStorage.getItem("userId");
+        const currentUserId = Number(sessionId);
+        this.setState({users: currentUserId})
+        UsersManager.getAll(this.state.sessionId).then(allUsers => {
             this.setState({ users: allUsers });
             console.log(allUsers)
         })

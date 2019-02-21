@@ -6,5 +6,8 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/users`).then(e => e.json());
+  },
+  getUserSpecific(sessionId){
+    return fetch(`${remoteURL}/users/${sessionId}`).then(e => e.json());
   }
 }

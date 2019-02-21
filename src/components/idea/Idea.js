@@ -17,8 +17,8 @@ export class Idea extends Component {
       <NavBar />
       <div className =" dek">
         <IdeaForm addIdea={this.props.addIdea}
-          history={this.props.history} />
-
+          history={this.props.history} /> {/*history is a JavaScript library that lets you easily manage session history anywhere JavaScript runs.*/}
+        
         <IdeaList okIdea={this.props.okIdea}
           deleteOkIdea={this.props.deleteOkIdea}
           forwardComponent1={this.props.forwardComponent1} 

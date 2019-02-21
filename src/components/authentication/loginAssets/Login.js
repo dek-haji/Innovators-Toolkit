@@ -30,7 +30,7 @@ export default class Login extends Component {
         sessionStorage.setItem(
             "username",
             this.state.username)
-
+console.log(this.state.username)
         let currentUser = sessionStorage.getItem("username")
         //we get the current user from the session storage.
         console.log(this.props.users)
