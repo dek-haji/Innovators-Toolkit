@@ -33,9 +33,9 @@ export default class BetterForm extends Component {
 
 
     
-
-
+    
     render() {
+        console.log(this.props.betterIdea)
         return (
 
             <CardColumns className="betterIdeas" >

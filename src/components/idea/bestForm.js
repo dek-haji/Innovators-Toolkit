@@ -8,6 +8,7 @@ export default class BestForm extends Component {
    
     
     render(){
+        console.log(this.props.bestIdea)
     return( 
       
         // I have received an array containing multiple objects – each one representing bestIdea. 

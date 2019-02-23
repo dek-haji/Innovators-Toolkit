@@ -27,24 +27,26 @@ export default class Login extends Component {
     //a username that matches the username in session storage. If able to find a match, 
     //log in under that user. If not, display message that username not found.
 
-        sessionStorage.setItem(
+        sessionStorage.setItem( //The setItem() method of the Storage interface, when passed a key name and value, will add that key to the given Storage object, or update that key's value if it already exists.
             "username",
             this.state.username)
 console.log(this.state.username)
         let currentUser = sessionStorage.getItem("username")
         //we get the current user from the session storage.
-        console.log(this.props.users)
-        console.log(this.state)
+        console.log(this.props.users) //all the users 
+        console.log(this.state) //the currentUser
         let authenticated = this.props.users.find(user =>   //The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
             user.name === this.state.username )
-            console.log(currentUser)
-            console.log(this.props.users)
+            console.log(authenticated)  //authenticated is the currentuser name, email and userID
+            console.log(this.state.username) // same as line 42. logs the current username an email
+            console.log(currentUser)    //the same as the line 41. logs the current username and email
+            
 
-            console.log(authenticated)
-// authenticated is not getting the updated props. thats why is throwing an arror.and it's also undefined.
+
             // sessionStorage.setItem(
             //     "userId",
             //     authenticated.id)
+            //     console.log(authenticated.id)   //authenticated.id is the current userID
 
             if (authenticated === undefined){
                 alert("Please re-renter a valid username and email or sign up below!")
@@ -52,15 +54,15 @@ console.log(this.state.username)
                 this.props.history.push("/register")
             } else {
                 sessionStorage.setItem(
-                    "userId",
+                    "userId",   //we set the session storage userID as the current userID
                     authenticated.id)
 
                     console.log(sessionStorage.getItem("userId"))
 
-                          // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
-                         this.props.updateComponent()
-                         // Taking user to idea page
-                         this.props.history.push("/idea")
+                    // Taking user to idea page
+                    this.props.history.push("/idea")
+                    // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
+                          this.props.updateComponent()   //then it updates the components.
                         
                     }
 

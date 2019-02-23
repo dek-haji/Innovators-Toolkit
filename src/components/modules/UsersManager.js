@@ -9,5 +9,9 @@ export default {
   },
   getUserSpecific(sessionId){
     return fetch(`${remoteURL}/users/${sessionId}`).then(e => e.json());
-  }
+  
+},
+getSpecificUser(sessionId){
+  return fetch(`${remoteURL}/users?userId=${sessionId}`).then(e => e.json());
+}
 }

@@ -84,11 +84,13 @@ export default class ApplicationViews extends Component {
 //??
     deleteOkIdea = id => {
         let sessionId = sessionStorage.getItem("userId")
+        console.log(sessionId)
         return fetch(`http://localhost:5002/idea/${id}`, {
             method: "DELETE"
         })
+        
             .then(e => e.json())
-            .then(() => fetch(`http://localhost:5002/idea?categoryId=1&${sessionId}`))
+            .then(() => fetch(`http://localhost:5002/idea?categoryId=1&userId=${sessionId}`))
             .then(e => e.json())
             .then(idea => this.setState({
                 okIdea: idea,
@@ -96,11 +98,12 @@ export default class ApplicationViews extends Component {
             }))
     }
     deleteBetterIdea = id => {
+        let sessionId = sessionStorage.getItem("userId")
         return fetch(`http://localhost:5002/idea/${id}`, {
             method: "DELETE"
         })
             .then(e => e.json())
-            .then(() => fetch(`http://localhost:5002/idea?categoryId=2`))
+            .then(() => fetch(`http://localhost:5002/idea?categoryId=2&userId=${sessionId}`))
             .then(e => e.json())
             .then(idea => this.setState({
                 betterIdea: idea,
@@ -108,11 +111,12 @@ export default class ApplicationViews extends Component {
             }))
     }
     deleteBestIdea = id => {
+        let sessionId = sessionStorage.getItem("userId")
         return fetch(`http://localhost:5002/idea/${id}`, {
             method: "DELETE"
         })
             .then(e => e.json())
-            .then(() => fetch(`http://localhost:5002/idea?categoryId=3`))
+            .then(() => fetch(`http://localhost:5002/idea?categoryId=3&userId=${sessionId}`))
             .then(e => e.json())
             .then(idea => this.setState({
                 bestIdea: idea,
@@ -134,6 +138,7 @@ export default class ApplicationViews extends Component {
     }
 
     forwardComponent1 = (id, idea) => {
+        console.log("state",this.state.sessionId)
         return IdeaManager.changeComponent(id, idea)
             .then(() => IdeaManager.getBetterIdeas(this.state.sessionId))
             .then(idea => this.setState({
@@ -166,17 +171,20 @@ export default class ApplicationViews extends Component {
 
     //?????
     updateComponent = () => {
-        const sessionId = sessionStorage.getItem("userId");
-        const currentUserId = Number(sessionId);
-        this.setState({users: currentUserId})
-        UsersManager.getAll(this.state.sessionId).then(allUsers => {
+        const sessionId = sessionStorage.getItem("userId");//gets the current userID from the session storage.
+        // const currentUserId = Number(sessionId); //
+        // this.setState({users: currentUserId})
+
+        UsersManager.getAll(sessionId).then(allUsers => {    //we make fetch call to get all the users which have the same sessionID/userID
+           console.log(sessionId) //current user 
             this.setState({ users: allUsers });
-            console.log(allUsers)
-            console.log(currentUserId)
+            console.log(allUsers)   //all the users from our database.
+           
         })
         // let sessionId = sessionStorage.getItem("userId")
         IdeaManager.getOkIdeas(sessionId)
             .then(okIdeas => {
+                console.log(okIdeas)    //whenever i add ok ideas it shows on the DOM  and also updated the database.
                 this.setState({
                     okIdea: okIdeas
                 })
@@ -196,8 +204,9 @@ export default class ApplicationViews extends Component {
                 })
             })
     }
-
+    currentUser = JSON.parse(sessionStorage.getItem("userId"))
     render() {
+        console.log("currentUser",this.currentUser)
         return (
             <React.Fragment>
 

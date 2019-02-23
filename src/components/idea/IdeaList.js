@@ -30,34 +30,36 @@ export default class IdeaList extends Component {
         }
         console.log("this.state.idea.id:", evt.target.id)
         console.log("existingIdea:", existingComponent);
+        console.log(this.props.forwardComponent1)//??
 
         this.props.forwardComponent1(evt.target.id, existingComponent)
         // .then(() => this.props.history.push("/idea"))
     }
 
-    componentDidUpdate(prevProps) {
+    // componentDidUpdate(prevProps) {
 
-        if (this.props.okIdea !== prevProps.okIdea) {
-        console.log(this.props.sessionId)
-            IdeaManager.getOkIdeas(this.props.sessionId)
-                .then(newIdea =>
-                    this.setState({
-                        idea: newIdea
-                    })
-                )
-        }
-    }
+    //     if (this.props.okIdea !== prevProps.okIdea) {
+    //     console.log(this.props.sessionId)
+    //         IdeaManager.getOkIdeas(this.props.sessionId)
+    //             .then(newIdea =>
+    //                 this.setState({
+    //                     idea: newIdea
+    //                 })
+    //             )
+    //     }
+    
 
     render() {
         console.log(this.props.okIdea)
         return (
 
-
+            
             <Card body outline color="secondary" className="ideas12" >
                 <h2>Free writting</h2>
                 {
                     this.props.okIdea.map(idea =>
                         <Card key={idea.id} className="card">
+                       
 
                             <CardBody className="card-body">
 
