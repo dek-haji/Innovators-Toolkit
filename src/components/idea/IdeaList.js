@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardText, CardBody } from "reactstrap"
 
 import "./Idea.css"
-import IdeaManager from "../modules/IdeaManager"
+
 
 
 

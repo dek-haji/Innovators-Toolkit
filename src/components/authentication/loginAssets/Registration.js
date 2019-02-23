@@ -1,18 +1,12 @@
 import React, { Component } from "react"
 import "./Login.css"
 
-
-
-
-
 export default class Register extends Component {
 
     // Set initial state
     state = {
         name: "",
         email: ""
-        // id:""
-        //  commented out id: ""
     }
 
     // Update state whenever an input field is edited
@@ -23,46 +17,23 @@ export default class Register extends Component {
         this.setState(stateToChange)
     }
 
-
-    // Simplistic handler for login submit
-    handleRegister = (e) => {
-        e.preventDefault()
-
-        /*
-            For now, just store the email and username that
-            the customer enters into local storage.
-        */
-        sessionStorage.setItem(
-            "credentials",
-            JSON.stringify({        //The JSON.stringify() method converts a JavaScript object or value to a JSON string, 
-                name: this.state.name,
-                email: this.state.email,
-                // id: this.state.id
-            })
-        )
-    }
-
-
     constructNewUser = () => {
-            const user = {
-                name: this.state.name,
-                email: this.state.email,
-                id: this.state.id
-            }
+        const user = {
+            name: this.state.name,
+            email: this.state.email
+        }
 
-            this.props.addUser(user).then(response => {
-                console.log(response)
-                this.props.history.push("/login")
-                
-            })
+        this.props.addUser(user)
+        .then(() =>this.props.populateAppState())
+        .then(() => this.props.history.push("/login"))
     }
 
     render() {
         return (
             <section className="register">
                 <form onSubmit={this.handleRegister}>
-                
-              
+
+
                     <h2>Sign up</h2>
                     <label htmlFor="inputUsername">
                     </label><br></br>
