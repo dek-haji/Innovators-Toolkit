@@ -26,7 +26,8 @@ export default class ApplicationViews extends Component {
 
     isAuthenticated = () => sessionStorage.getItem("username") !== null
 
-    populateAppState () {
+    // Basically the populateAppState function builds the initial state when App Views mounts and then I called it whenever there was a change (edit, add, delete) because react rerenders anytime there’s a change to state.
+        populateAppState () {  
 
         let sessionId = Number(sessionStorage.getItem("userId"))
         console.log("SessionId", sessionId)

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { Card, CardColumns, CardText } from "reactstrap"
+import { Card, CardBody, CardText, Button } from "reactstrap"
+import { Box } from "grommet"
 import "./Idea.css"
 
 
@@ -37,33 +38,34 @@ export default class BetterForm extends Component {
         console.log(this.props.betterIdea)
         return (
 
-            <CardColumns className="betterIdeas" >
+            <Box body outline color="secondary" className="better" >
 
-                <Card body outline color="secondary" className="ideas2" >
+                
                     <h2>Better idea</h2>
                     {
                         this.props.betterIdea.map(idea =>
-                            <Card key={idea.id} className="card" >
-                              
+                            <Card  style={{ backgroundColor: 'white', borderColor: '#333', }}
+                            key={idea.id} className="card" >
+                              <CardBody className="card-body">
 
                                     <CardText >{idea.idea} </CardText>
 
                                     
-                                        <button
+                                        <Button outline color="danger"
                                             onClick={() => this.props.deleteBetterIdea(idea.id)}
-                                            className="card-link">Delete</button>
-                                        <button id={idea.id}
+                                            className="card-link">Delete</Button>
+                                        <Button outline color="success" id={idea.id}
                                             onClick={this.updateExistingComponent}
-                                            className="card-link">Forward</button>
+                                            className="card-link">Forward</Button>
                                     
                                 
-                               
+                               </CardBody>
 
                             </Card>
                         )
                     }
-                </Card>
-            </CardColumns>
+                
+            </Box>
         )
     }
 }

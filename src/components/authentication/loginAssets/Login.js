@@ -30,6 +30,7 @@ export default class Login extends Component {
 
         if (authenticated === undefined){
             alert("Please re-renter a valid username and email or sign up below!")
+            this.props.history.push("/register")
         } else {
             sessionStorage.setItem("userId", authenticated.id)
             this.props.populateAppState()

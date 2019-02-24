@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import IdeaManager from "../modules/IdeaManager"
-import { Input, Button } from "reactstrap"
+import { Input, Button, Card } from "reactstrap"
+import NavBar from "../nav/NavBar";
 
 
 export default class IdeaEditForm extends Component {
@@ -44,7 +45,9 @@ export default class IdeaEditForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <form className="ideaForm">
+        <NavBar></NavBar>
+       
+        <form className="ideaEditForm">
           <div className="test">
             <label htmlFor="IdeaName">What do you have in your mind?</label>
             <Input type="textarea" required

@@ -1,15 +1,17 @@
-.ideas12{
+.okIdea{
     
     display: flex;
     justify-content: space-around;
-    justify-content: space-around;
-   
-    max-width: 32%;
+   background-color: lightgray;
+    width: 40%;
+    border: 1px solid black
+    
 }
 .dek{
     background-color:lightgrey;
     display: flex;
-    max-width: 100%
+    width: 100%;
+    height: 100%;
 
 }
 .dek > *:nth-child(2){
@@ -20,18 +22,36 @@
 
 }
 .ideaForm1{
-    max-width: 32%;
+    width: 32%;
+    
+   
 }
-.betterIdeas{
-    display: flex;
-    justify-content: center;
-    max-width: 32%;
-    align-content: flex-end
+.ideaEditForm{
+    background-color: lightgray
 }
-.card {
-    display: flex;
+.ideas3{
+    width: 32%;
+    background-color: lightgray;
+    border: 1px solid black
+    
 }
-.card-text{
-    border: 1px solid grey;
-    box-shadow: 1px red
+.better{
+    
+    width: 32%;
+    background-color: lightgray;
+    border: 1px solid black
+   
+   
+}
+.card-body{
+    padding: 3%;
+    margin: 2%;
+    box-shadow: 0 4px 8px 0 rgba(1,1,31,0.2);
+    transition: 0.31s;
+    
+}
+.test{
+    width: 50%;
+    padding: 2%;
+   
 }

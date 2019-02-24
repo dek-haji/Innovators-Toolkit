@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
-import { Card, CardText, CardBody } from "reactstrap"
+import { Card, CardText, CardBody, Button } from "reactstrap"
+import { Box} from "grommet"
 
 import "./Idea.css"
 
@@ -54,11 +55,15 @@ export default class IdeaList extends Component {
         return (
 
             
-            <Card body outline color="secondary" className="ideas12" >
+  
+
+            <Box body outline color="secondary" className="okIdea" >
+            
                 <h2>Free writting</h2>
                 {
                     this.props.okIdea.map(idea =>
-                        <Card key={idea.id} className="card">
+                        <Card   style={{ backgroundColor: 'white', borderColor: '#333',}}
+                        key={idea.id} className="card">
                        
 
                             <CardBody className="card-body">
@@ -67,22 +72,23 @@ export default class IdeaList extends Component {
 
 
                                 <Link className="nav-link" to={`/idea/${idea.id}/edit`}>Edit</Link>
-                                <button 
+                                <Button outline color="danger"
                                    
                                     onClick={() => this.props.deleteOkIdea(idea.id)}
-                                    className="card-link">Delete</button>
+                                    className="card-link">Delete</Button>
 
 
-                            <button id={idea.id}
+                             <Button outline color="success" id={idea.id}
                                 onClick={this.updateExistingComponent}
-                                className="card-link">Forward</button>
+                                className="card-link">Forward</Button>
 
                                 </CardBody>
 
                         </Card>
                     )
                 }
-            </Card>
+            </Box>
+            
 
         )
     }
